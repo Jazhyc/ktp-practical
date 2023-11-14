@@ -1,0 +1,29 @@
+{
+    "facts" : {
+        "fact1" : "The first fact",
+        "fact2" : "The second fact",
+        "fact3" : "The third fact",
+        "fact4" : "The fourth fact",
+        "fact5" : "The fifth fact"
+    },
+
+    "rules" : {
+        "rule1" : {
+            "if" : ["fact1", "fact2"],
+            "then" : {
+                "fact" : "fact3"
+            }
+        },
+        "rule2" : {
+            "if" : ["fact2", "fact3"],
+            "then" : {
+                "output" : "output1"
+            }
+        }
+    },
+
+    "outputs" : {
+        "output1" : "The first output",
+        "output2" : "The second output"
+    }
+}
