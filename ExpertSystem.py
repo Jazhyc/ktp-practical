@@ -35,6 +35,13 @@ class ExpertSystem:
                 # Check if the then statement is a fact or output
                 if list(rule['then'].keys())[0] == 'fact':
                     self.add_fact(rule['then']['fact'])
+
+                    # Remove the rule, only changes internal state and not json
+                    del self.kb['rules'][key]
+
+                    # Recursively resolve
+                    return self.resolve()
+
                 else:
                     self.output = rule['then']['output']
                     return True
