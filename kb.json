@@ -25,5 +25,9 @@
     "outputs" : {
         "output1" : "The first output",
         "output2" : "The second output"
+    },
+
+    "questions" : {
+        "question1" : "Implement later"
     }
 }

@@ -49,3 +49,12 @@ class ExpertSystem:
             if self.resolve():
                 print('Output: ' + self.get_output_detail())
                 break
+    
+    def ask_question(self):
+        """
+        Prompt the user interface to ask a question
+        Adds the appropriate fact to the known facts from the answer
+        """
+
+        # Implement once we have a UI
+        pass
