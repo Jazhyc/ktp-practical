@@ -4,6 +4,10 @@ class Frontend:
     def __init__(self):
         self.input_fact = None
         self.app = Dash(__name__)
+    
+    def set_controller(self, controller):
+        """Sets the controller for communication"""
+        self.controller = controller
 
     def display_question(self, question_answers_pair):
         """Displays a question and answer options"""
@@ -35,9 +39,7 @@ class Frontend:
             """Gets the selected answer and stores it in the input_fact variable"""
 
             if selected_answer:
-                self.input_fact = question_answers_pair['answers'][selected_answer]['fact']
-            else:
-                self.input_fact = None
+                self.controller.update_model(selected_answer)
 
             return ''
 
@@ -45,6 +47,9 @@ class Frontend:
 
     def display_answer(self, answer):
         """Displays an answer"""
+
+        # Remove all callbacks
+        self.app.callback_map.clear()
 
         self.app.layout = html.Div([
             html.H1('Answer'),

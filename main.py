@@ -10,6 +10,7 @@ def main():
     frontend = Frontend()
     expert = ExpertSystem(kb)
     controller = Controller(expert, frontend)
+    frontend.set_controller(controller)
 
     controller.run()
 

@@ -21,15 +21,18 @@ class Controller:
 
             response = self.get_response()
 
-            print(response)
-
             self.model.add_fact(response)
-
-            print(response)
 
             if self.model.resolve():
                 self.view.display_answer(self.model.get_output_detail())
                 break
+    
+    def update_model(self, response):
+        print("Main thread got response")
+        self.model.add_fact(response)
+
+        if self.model.resolve():
+            self.view.display_answer(self.model.get_output_detail())
 
     def get_response(self):
         """Returns the response from the user"""
