@@ -1,12 +1,17 @@
 from helper import *
-from ExpertSystem import ExpertSystem
+from expert_system import ExpertSystem
+from frontend import Frontend
+from controller import Controller
 
 def main():
     kb = load_json('kb.json')
+
+    # Ensure decoupling of the frontend and expert system
+    frontend = Frontend()
     expert = ExpertSystem(kb)
-    expert.add_fact('fact1')
-    expert.add_fact('fact2')
-    expert.run()
+    controller = Controller(expert, frontend)
+
+    controller.run()
 
 if __name__ == '__main__':
     main()

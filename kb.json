@@ -9,15 +9,21 @@
 
     "rules" : {
         "rule1" : {
-            "if" : ["fact1", "fact2"],
+            "if" : ["fact1"],
             "then" : {
                 "fact" : "fact3"
             }
         },
         "rule2" : {
-            "if" : ["fact2", "fact3"],
+            "if" : ["fact3"],
             "then" : {
                 "output" : "output1"
+            }
+        },
+        "rule3" : {
+            "if" : ["fact2"],
+            "then" : {
+                "fact" : "fact3"
             }
         }
     },
@@ -28,6 +34,19 @@
     },
 
     "questions" : {
-        "question1" : "Implement later"
+        "question1" : {
+            "if" : [],
+            "text" : "The first question",
+            "answers" : {
+                "answer1" : {
+                    "text" : "The first answer",
+                    "fact" : "fact1"
+                },
+                "answer2" : {
+                    "text" : "The second answer",
+                    "fact" : "fact2"
+                }
+            }
+        }
     }
 }

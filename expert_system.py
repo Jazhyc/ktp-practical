@@ -1,9 +1,16 @@
 class ExpertSystem:
 
     def __init__(self, kb):
-        """Creates a expert system using the given knowledge base"""
+        """
+        Creates a expert system using the given knowledge base
+        Contains a reference to the controller for communication
+        """
+
+        # The knowledge base and facts that are deemed to be true
         self.kb = kb
         self.known_facts = []
+
+        # The output of the expert system and the reference to the controller
         self.output = None
     
     def get_known_facts(self):
@@ -48,20 +55,21 @@ class ExpertSystem:
         
         return False
     
-    def run(self):
-        """Runs the expert system"""
-        
-        while (True):
-
-            if self.resolve():
-                print('Output: ' + self.get_output_detail())
-                break
-    
-    def ask_question(self):
+    def get_question(self):
         """
-        Prompt the user interface to ask a question
-        Adds the appropriate fact to the known facts from the answer
+        Gets a valid question from the knowledge base
+        Returns None if no question can be asked
         """
 
-        # Implement once we have a UI
-        pass
+        # Check all questions and see if any can be asked
+        for key in self.kb['questions']:
+
+            question = self.kb['questions'][key]
+
+            # Check if all the conditions are met
+            if all(fact in self.known_facts for fact in question['if']):
+
+                # Pop the question from the knowledge base
+                del self.kb['questions'][key]
+                
+                return question
