@@ -28,7 +28,7 @@ class Controller:
                 break
     
     def update_model(self, response):
-        print("Main thread got response")
+        
         self.model.add_fact(response)
 
         if self.model.resolve():

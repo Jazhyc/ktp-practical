@@ -29,8 +29,8 @@
     },
 
     "outputs" : {
-        "output1" : "The first output",
-        "output2" : "The second output"
+        "output1" : "Hello World",
+        "output2" : "Hello World 2"
     },
 
     "questions" : {

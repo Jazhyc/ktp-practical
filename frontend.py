@@ -3,7 +3,7 @@ from dash import dcc, html, Dash, dependencies
 class Frontend:
     def __init__(self):
         self.input_fact = None
-        self.app = Dash(__name__)
+        self.app = Dash(__name__, suppress_callback_exceptions=True)
     
     def set_controller(self, controller):
         """Sets the controller for communication"""
@@ -17,11 +17,19 @@ class Frontend:
 
         self.app.layout = html.Div([
             html.H1('Select an answer'),
-            dcc.Dropdown(
-                id='answer-dropdown',
+            html.Hr(),
+
+            # Use radio buttons with padding instead
+            dcc.RadioItems(
+                id='answer-radio',
                 options=[{'label': answer['text'], 'value': answer['fact']} for answer in answers],
-                value=None
+                value=None,
+                labelStyle={'display': 'block', 'padding': '10px'}
+
             ),
+
+            
+            html.Hr(),
             html.Button('Submit', id='submit-button', n_clicks=0),
 
             # Hidden div used in callbacks
@@ -32,7 +40,7 @@ class Frontend:
             dependencies.Output('hidden-div', 'children'),
             [
                 dependencies.Input('submit-button', 'n_clicks'),
-                dependencies.State('answer-dropdown', 'value')
+                dependencies.State('answer-radio', 'value')
             ],
         )
         def set_response(n_clicks, selected_answer):
@@ -41,15 +49,12 @@ class Frontend:
             if selected_answer:
                 self.controller.update_model(selected_answer)
 
-            return ''
+            return 'None'
 
         self.app.run_server(debug=True)
 
     def display_answer(self, answer):
         """Displays an answer"""
-
-        # Remove all callbacks
-        self.app.callback_map.clear()
 
         self.app.layout = html.Div([
             html.H1('Answer'),
