@@ -40,7 +40,7 @@ class Frontend:
                     self.controller.update_model(self.selected_answer)
                     return redirect('/')
                 
-                return render_template('question.html', form=form)
+                return render_template('question.html', form=form, question=self.question_answers_pair['text'])
             
             return render_template('answer.html', answer=self.selected_answer)
         

@@ -1,50 +1,89 @@
 {
+    
     "facts" : {
-        "fact1" : "The first fact",
-        "fact2" : "The second fact",
-        "fact3" : "The third fact",
-        "fact4" : "The fourth fact",
-        "fact5" : "The fifth fact"
+        "human" : "The first fact",
+        "nonhuman" : "The second fact",
+        "human-yes" : "The third fact",
+        "human-no" : "The fourth fact",
+        "nonhuman-yes" : "The fifth fact",
+        "nonhuman-no" : "The sixth fact"
     },
 
     "rules" : {
         "rule1" : {
-            "if" : ["fact1"],
+            "if" : ["human-yes"],
             "then" : {
-                "fact" : "fact3"
+                "output" : "passed-turing"
             }
         },
         "rule2" : {
-            "if" : ["fact3"],
+            "if" : ["human-no"],
             "then" : {
-                "output" : "output1"
+                "output" : "failed-turing"
             }
         },
         "rule3" : {
-            "if" : ["fact2"],
+            "if" : ["nonhuman-yes"],
             "then" : {
-                "fact" : "fact3"
+                "output" : "failed-turing"
+            }
+        },
+        "rule4" : {
+            "if" : ["nonhuman-no"],
+            "then" : {
+                "output" : "passed-turing"
             }
         }
     },
 
     "outputs" : {
-        "output1" : "Hello World",
-        "output2" : "Hello World 2"
+        "passed-turing" : "You passed the Turing test!",
+        "failed-turing" : "You failed the Turing test!"
     },
 
     "questions" : {
+
         "question1" : {
             "if" : [],
-            "text" : "The first question",
+            "text" : "Are you human?",
             "answers" : {
                 "answer1" : {
-                    "text" : "The first answer",
-                    "fact" : "fact1"
+                    "text" : "Yes",
+                    "fact" : "human"
                 },
                 "answer2" : {
-                    "text" : "The second answer",
-                    "fact" : "fact2"
+                    "text" : "No",
+                    "fact" : "nonhuman"
+                }
+            }
+        },
+
+        "question2" : {
+            "if" : ["human"],
+            "text" : "Are you sure?",
+            "answers" : {
+                "answer1" : {
+                    "text" : "Yes",
+                    "fact" : "human-yes"
+                },
+                "answer2" : {
+                    "text" : "No",
+                    "fact" : "human-no"
+                }
+            }
+        },
+
+        "question3" : {
+            "if" : ["nonhuman"],
+            "text" : "Are you sure?",
+            "answers" : {
+                "answer1" : {
+                    "text" : "Yes",
+                    "fact" : "nonhuman-yes"
+                },
+                "answer2" : {
+                    "text" : "No",
+                    "fact" : "nonhuman-no"
                 }
             }
         }
