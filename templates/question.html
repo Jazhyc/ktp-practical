@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
 <body>
-    <h1>Select an answer</h1>
-    <form method="POST">
-        {{ form.hidden_tag() }}
-        {{ form.answer.label }}
-        {% for subfield in form.answer %}
-            <div>{{ subfield }} {{ subfield.label }}</div>
-        {% endfor %}
-        {{ form.submit() }}
-    </form>
+    <div class="container py-5">
+        <h1 class="mb-4">Select an answer</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.answer.label(class="d-block mb-2") }}
+                {% for subfield in form.answer %}
+                    <div class="custom-control custom-radio mb-2">
+                        {{ subfield(class="custom-control-input") }} 
+                        {{ subfield.label(class="custom-control-label") }}
+                    </div>
+                {% endfor %}
+            </div>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    </div>
 </body>
 </html>

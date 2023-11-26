@@ -30,6 +30,7 @@ class Controller:
     
     def reset(self):
         self.model.reset()
+        self.run()
             
 
 

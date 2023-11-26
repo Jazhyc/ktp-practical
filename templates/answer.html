@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
 <body>
-    <h1>Answer</h1>
-    <p>{{ answer }}</p>
-
-    <!-- Add a reset button with the word "RESET" on it -->
-    <button onclick="window.location.href='/reset'">RESET</button>
-    
+    <div class="container py-5">
+        <h1 class="mb-4">Answer</h1>
+        <p class="mb-4">{{ answer }}</p>
+        <button class="btn btn-primary" onclick="window.location.href='/reset'">RESET</button>
+    </div>
 </body>
 </html>

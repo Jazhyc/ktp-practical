@@ -49,7 +49,6 @@ class Frontend:
             self.selected_answer = None
             self.question_answers_pair = None
             self.controller.reset()
-            self.controller.run()
             return redirect('/')
     
     def get_input(self):
