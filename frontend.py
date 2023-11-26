@@ -1,75 +1,73 @@
-from dash import dcc, html, Dash, dependencies
+from flask import Flask, render_template, redirect
+from flask_wtf import FlaskForm
+from wtforms import RadioField, SubmitField
+from wtforms.validators import DataRequired
+import time
+
+class QuestionForm(FlaskForm):
+    answer = RadioField('Answer', choices=[], validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
 class Frontend:
     def __init__(self):
-        self.input_fact = None
-        self.app = Dash(__name__, suppress_callback_exceptions=True)
-    
+        self.app = Flask(__name__)
+        self.app.config['SECRET_KEY'] = 'ktp'
+        self.setup_routes()
+
+        self.controller = None
+
+        self.question_answers_pair = None
+        self.selected_answer = None
+
     def set_controller(self, controller):
-        """Sets the controller for communication"""
         self.controller = controller
 
-    def display_question(self, question_answers_pair):
-        """Displays a question and answer options"""
+    def setup_routes(self):
+        @self.app.route('/', methods=['GET', 'POST'])
+        def view():
 
-        # Extract the answers from the question_answers_pair dictionary
-        answers = [answer for answer in question_answers_pair['answers'].values()]
-
-        self.app.layout = html.Div([
-            html.H1('Select an answer'),
-            html.Hr(),
-
-            # Use radio buttons with padding instead
-            dcc.RadioItems(
-                id='answer-radio',
-                options=[{'label': answer['text'], 'value': answer['fact']} for answer in answers],
-                value=None,
-                labelStyle={'display': 'block', 'padding': '10px'}
-
-            ),
-
+            # Skip if no question is set
+            if not (self.question_answers_pair or self.selected_answer):
+                return render_template('404.html')
             
-            html.Hr(),
-            html.Button('Submit', id='submit-button', n_clicks=0),
+            if self.question_answers_pair:
 
-            # Hidden div used in callbacks
-            html.Div(id='hidden-div', style={'display':'none'})
-        ])
+                form = QuestionForm()
+                form.answer.choices = [(answer['fact'], answer['text']) for answer in self.question_answers_pair['answers'].values()]
 
-        @self.app.callback(
-            dependencies.Output('hidden-div', 'children'),
-            [
-                dependencies.Input('submit-button', 'n_clicks'),
-                dependencies.State('answer-radio', 'value')
-            ],
-        )
-        def set_response(n_clicks, selected_answer):
-            """Gets the selected answer and stores it in the input_fact variable"""
-
-            if selected_answer:
-                self.controller.update_model(selected_answer)
-
-            return 'None'
-
-        self.app.run_server(debug=True)
-
-    def display_answer(self, answer):
-        """Displays an answer"""
-
-        self.app.layout = html.Div([
-            html.H1('Answer'),
-            html.P(answer)
-        ])
-
-        self.app.run_server(debug=True)
-
+                if form.validate_on_submit():
+                    self.selected_answer = form.answer.data
+                    self.controller.update_model(self.selected_answer)
+                    return redirect('/')
+                
+                return render_template('question.html', form=form)
+            
+            return render_template('answer.html', answer=self.selected_answer)
+        
+        @self.app.route('/reset')
+        def reset():
+            self.selected_answer = None
+            self.question_answers_pair = None
+            self.controller.reset()
+            self.controller.run()
+            return redirect('/')
+    
     def get_input(self):
-        """
-        Returns the input if it exists
-        Returns None otherwise
-        """
+        return self.selected_answer
+    
+    def set_question(self, question):
+        self.question_answers_pair = question
+        self.selected_answer = None
+    
+    def display_answer(self, answer):
+        self.selected_answer = answer
+        self.question_answers_pair = None
 
-        if self.input_fact:
-            input = self.input_fact
-            self.input_fact = None
-            return input
+        print(answer)
+
+    def run(self):
+        self.app.run(debug=True)
+
+if __name__ == '__main__':
+    frontend = Frontend()
+    frontend.run()

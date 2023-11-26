@@ -4,15 +4,15 @@ from frontend import Frontend
 from controller import Controller
 
 def main():
-    kb = load_json('kb.json')
-
+    
     # Ensure decoupling of the frontend and expert system
     frontend = Frontend()
-    expert = ExpertSystem(kb)
+    expert = ExpertSystem()
     controller = Controller(expert, frontend)
-    frontend.set_controller(controller)
 
+    # Create a thread for the controller
     controller.run()
+    frontend.run()
 
 if __name__ == '__main__':
     main()
