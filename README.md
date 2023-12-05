@@ -7,4 +7,6 @@ Project for the year 2023 - 2024
 - pip install -r requirements.txt
 - python main.py
 
-We pretty much only need the knowledge base now
+## Limitations
+
+Our system can only account for furniture in the living room for now
