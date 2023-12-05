@@ -1,89 +1,127 @@
 {
-    
-    "facts" : {
-        "human" : "The first fact",
-        "nonhuman" : "The second fact",
-        "human-yes" : "The third fact",
-        "human-no" : "The fourth fact",
-        "nonhuman-yes" : "The fifth fact",
-        "nonhuman-no" : "The sixth fact"
+    "facts": {
+
+        "living-room": "The main room in the house",
+        "kitchen": "The place where food is prepared",
+        "bedroom": "The place where people sleep",
+        "bathroom": "The place where people bathe and relieve themselves",
+        "hallway": "Connector rooms in the house",
+
+        "oil": "A liquid used for cooking",
+        "blood": "A liquid used for living",
+        "water": "A liquid used for drinking",
+        "dust": "Unpleasant particles in the air",
+        "ink": "A liquid used for writing",
+        "food": "A substance used for eating",
+        "food-crumbs": "Small particles of food",
+        "animal-hair": "A substance used for warmth",
+        "glass": "A hard transparent substance",
+
+        "carpets": "A soft floor covering",
+        "floor-tiles": "A hard floor covering made from multiple pieces",
+        "wood-floor": "A hard organic floor covering",
+        "marble-floor": "A hard floor covering",
+        "laminate-flooring": "A hard floor covering similar to plastic",
+        "wallpaper": "A covering for walls",
+        "wall-tiles": "A covering for walls made from multiple pieces",
+
+        "fabric-furniture": "A material used for furniture with a unique texture",
+        "leather-furniture": "A material used for furniture made from animal skin",
+        "wood-furniture": "A material used for furniture made from trees",
+        "metal-furniture": "A material used for furniture made from metal",
+        "glass-furniture": "A material used for furniture made from glass",
+        "counter-top" : "A flat surface used for preparing food",
+        "toilet": "A device used for relieving oneself",
+        "faucet": "A device used for controlling water flow",
+        "sink": "A device used for holding water",
+        "bath-tub": "A device used for bathing"
+
     },
 
-    "rules" : {
-        "rule1" : {
-            "if" : ["human-yes"],
-            "then" : {
-                "output" : "passed-turing"
+    "rules": {
+        "rule1": {
+            "if": [
+                "human-yes"
+            ],
+            "then": {
+                "output": "passed-turing"
             }
         },
-        "rule2" : {
-            "if" : ["human-no"],
-            "then" : {
-                "output" : "failed-turing"
+        "rule2": {
+            "if": [
+                "human-no"
+            ],
+            "then": {
+                "output": "failed-turing"
             }
         },
-        "rule3" : {
-            "if" : ["nonhuman-yes"],
-            "then" : {
-                "output" : "failed-turing"
+        "rule3": {
+            "if": [
+                "nonhuman-yes"
+            ],
+            "then": {
+                "output": "failed-turing"
             }
         },
-        "rule4" : {
-            "if" : ["nonhuman-no"],
-            "then" : {
-                "output" : "passed-turing"
+        "rule4": {
+            "if": [
+                "nonhuman-no"
+            ],
+            "then": {
+                "output": "passed-turing"
             }
         }
     },
 
-    "outputs" : {
-        "passed-turing" : "You passed the Turing test!",
-        "failed-turing" : "You failed the Turing test!"
+    "outputs": {
+        "passed-turing": "You passed the Turing test!",
+        "failed-turing": "You failed the Turing test!"
     },
 
-    "questions" : {
-
-        "question1" : {
-            "if" : [],
-            "text" : "Are you human?",
-            "answers" : {
-                "answer1" : {
-                    "text" : "Yes",
-                    "fact" : "human"
+    "questions": {
+        "question1": {
+            "if": [],
+            "text": "Are you human?",
+            "answers": {
+                "answer1": {
+                    "text": "Yes",
+                    "fact": "human"
                 },
-                "answer2" : {
-                    "text" : "No",
-                    "fact" : "nonhuman"
+                "answer2": {
+                    "text": "No",
+                    "fact": "nonhuman"
                 }
             }
         },
-
-        "question2" : {
-            "if" : ["human"],
-            "text" : "Are you sure?",
-            "answers" : {
-                "answer1" : {
-                    "text" : "Yes",
-                    "fact" : "human-yes"
+        "question2": {
+            "if": [
+                "human"
+            ],
+            "text": "Are you sure?",
+            "answers": {
+                "answer1": {
+                    "text": "Yes",
+                    "fact": "human-yes"
                 },
-                "answer2" : {
-                    "text" : "No",
-                    "fact" : "human-no"
+                "answer2": {
+                    "text": "No",
+                    "fact": "human-no"
                 }
             }
         },
-
-        "question3" : {
-            "if" : ["nonhuman"],
-            "text" : "Are you sure?",
-            "answers" : {
-                "answer1" : {
-                    "text" : "Yes",
-                    "fact" : "nonhuman-yes"
+        "question3": {
+            "if": [
+                "nonhuman"
+            ],
+            "text": "Are you sure?",
+            "answers": {
+                "answer1": {
+                    "text": "Yes",
+                    "fact": "nonhuman-yes"
                 },
-                "answer2" : {
-                    "text" : "No",
-                    "fact" : "nonhuman-no"
+                "answer2": {
+                    "text": "No",
+                    "fact": "nonhuman-no"
                 }
             }
         }

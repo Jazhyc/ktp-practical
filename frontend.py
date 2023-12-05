@@ -2,11 +2,12 @@ from flask import Flask, render_template, redirect
 from flask_wtf import FlaskForm
 from wtforms import RadioField, SubmitField
 from wtforms.validators import DataRequired
-import time
+
 
 class QuestionForm(FlaskForm):
     answer = RadioField('Answer', choices=[], validators=[DataRequired()])
     submit = SubmitField('Submit')
+
 
 class Frontend:
     def __init__(self):
@@ -29,7 +30,7 @@ class Frontend:
             # Skip if no question is set
             if not (self.question_answers_pair or self.selected_answer):
                 return render_template('404.html')
-            
+
             if self.question_answers_pair:
 
                 form = QuestionForm()
@@ -39,25 +40,25 @@ class Frontend:
                     self.selected_answer = form.answer.data
                     self.controller.update_model(self.selected_answer)
                     return redirect('/')
-                
+
                 return render_template('question.html', form=form, question=self.question_answers_pair['text'])
-            
+
             return render_template('answer.html', answer=self.selected_answer)
-        
+
         @self.app.route('/reset')
         def reset():
             self.selected_answer = None
             self.question_answers_pair = None
             self.controller.reset()
             return redirect('/')
-    
+
     def get_input(self):
         return self.selected_answer
-    
+
     def set_question(self, question):
         self.question_answers_pair = question
         self.selected_answer = None
-    
+
     def display_answer(self, answer):
         self.selected_answer = answer
         self.question_answers_pair = None
@@ -66,6 +67,7 @@ class Frontend:
 
     def run(self):
         self.app.run(debug=True)
+
 
 if __name__ == '__main__':
     frontend = Frontend()

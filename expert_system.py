@@ -1,5 +1,6 @@
 from helper import load_json
 
+
 class ExpertSystem:
 
     def __init__(self):
@@ -21,11 +22,11 @@ class ExpertSystem:
     def set_observer(self, observer):
         """Sets the observer for the expert system"""
         self.observer = observer
-    
+
     def get_known_facts(self):
         """Returns the known facts"""
         return self.known_facts
-    
+
     def add_fact(self, fact):
         """Adds a fact to the known facts"""
         self.known_facts.append(fact)
@@ -33,13 +34,13 @@ class ExpertSystem:
     def get_output_detail(self):
         """Returns the output detail"""
         return self.kb['outputs'][self.output]
-    
+
     def reset(self):
         """Resets the expert system"""
         self.known_facts = []
         self.kb = load_json('kb.json')
         self.output = None
-    
+
     def resolve(self):
         """
         Resolves the known facts to find the conclusion
@@ -53,7 +54,7 @@ class ExpertSystem:
 
             # Check if all the conditions are met
             if all(fact in self.known_facts for fact in rule['if']):
-                
+
                 # Check if the then statement is a fact or output
                 if list(rule['then'].keys())[0] == 'fact':
                     self.add_fact(rule['then']['fact'])
@@ -67,9 +68,9 @@ class ExpertSystem:
                 else:
                     self.output = rule['then']['output']
                     return True
-        
+
         return False
-    
+
     def get_question(self):
         """
         Gets a valid question from the knowledge base
@@ -88,5 +89,5 @@ class ExpertSystem:
 
                 # Pop the question from the knowledge base
                 self.kb['questions'].pop(key)
-                
+
                 self.observer.set_question(question)
