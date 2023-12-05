@@ -217,15 +217,15 @@
             "text": "What are you cleaning in the living room?",
             "answers": {
                 "answer1": {
-                    "text": "furniture",
+                    "text": "The Furniture",
                     "fact": "furniture"
                 },
                 "answer2": {
-                    "text": "walls",
+                    "text": "The Walls",
                     "fact": "walls"
                 },
                 "answer3": {
-                    "text": "floor",
+                    "text": "The Floor",
                     "fact": "floor"
                 }
             }
@@ -238,23 +238,23 @@
             "text": "What stain are you cleaning?",
             "answers": {
                 "answer1": {
-                    "text": "blood",
+                    "text": "Blood",
                     "fact": "blood"
                 },
                 "answer2": {
-                    "text": "ink",
+                    "text": "Ink",
                     "fact": "ink"
                 },
                 "answer3": {
-                    "text": "food",
+                    "text": "Food",
                     "fact": "food"
                 },
                 "answer4": {
-                    "text": "food-crumbs",
+                    "text": "Food Crumbs",
                     "fact": "food-crumbs"
                 },
                 "answer5": {
-                    "text": "animal-hair",
+                    "text": "Animal Hair",
                     "fact": "animal-hair"
                 }
             }
@@ -267,23 +267,23 @@
             "text": "What furniture are you cleaning?",
             "answers": {
                 "answer1": {
-                    "text": "fabric-furniture",
+                    "text": "Fabric Furniture",
                     "fact": "fabric-furniture"
                 },
                 "answer2": {
-                    "text": "leather-furniture",
+                    "text": "Leather Furniture",
                     "fact": "leather-furniture"
                 },
                 "answer3": {
-                    "text": "wood-furniture",
+                    "text": "Wood Furniture",
                     "fact": "wood-furniture"
                 },
                 "answer4": {
-                    "text": "metal-furniture",
+                    "text": "Metal Furniture",
                     "fact": "metal-furniture"
                 },
                 "answer5": {
-                    "text": "glass-furniture",
+                    "text": "Glass Furniture",
                     "fact": "glass-furniture"
                 }
             }
