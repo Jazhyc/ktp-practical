@@ -87,6 +87,80 @@
             "then": {
                 "output": "glass-furniture-blood"
             }
+        },
+
+        "fabric-furniture-ink": {
+            "if": [
+                "fabric-furniture",
+                "ink"
+            ],
+            "then": {
+                "output": "fabric-furniture-ink"
+            }
+        },
+        "leather-furniture-ink": {
+            "if": [
+                "leather-furniture",
+                "ink"
+            ],
+            "then": {
+                "output": "leather-furniture-ink"
+            }
+        },
+        "wood-furniture-ink": {
+            "if": [
+                "wood-furniture",
+                "ink"
+            ],
+            "then": {
+                "output": "wood-furniture-ink"
+            }
+        },
+        "metal-furniture-ink": {
+            "if": [
+                "metal-furniture",
+                "ink"
+            ],
+            "then": {
+                "output": "metal-furniture-ink"
+            }
+        },
+        "glass-furniture-ink": {
+            "if": [
+                "glass-furniture",
+                "ink"
+            ],
+            "then": {
+                "output": "glass-furniture-ink"
+            }
+        },
+
+        "furniture-food" : {
+            "if": [
+                "food",
+                "furniture"
+            ],
+            "then": {
+                "output": "furniture-food"
+            }
+        },
+        "furniture-food-crumbs" : {
+            "if": [
+                "food-crumbs",
+                "furniture"
+            ],
+            "then": {
+                "output": "furniture-food-crumbs"
+            }
+        },
+
+        "animal-hair" : {
+            "if": [
+                "animal-hair"
+            ],
+            "then": {
+                "output": "animal-hair"
+            }
         }
     },
 
@@ -95,7 +169,18 @@
         "leather-furniture-blood": "Use a wet cloth and make sure to clean the surface frequently",
         "wood-furniture-blood": "Use a wet cloth and then dry the furniture immediately",
         "metal-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "glass-furniture-blood": "Use a wet cloth with cleaning vinegar and then a dry cloth"
+        "glass-furniture-blood": "Use a wet cloth with cleaning vinegar and then a dry cloth",
+
+        "fabric-furniture-ink": "Dab with milk or stain remover and then wipe with a dry cloth",
+        "leather-furniture-ink": "Use a wet cloth with milk or stain remover and make sure to clean the surface frequently",
+        "wood-furniture-ink": "Use a wet cloth with milk or stain remover and then dry the furniture immediately",
+        "metal-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "glass-furniture-ink": "Use a wet cloth with cleaning vinegar and then a dry cloth",
+
+        "furniture-food": "Use a kitchen towel and finish with a damp cloth",
+        "furniture-food-crumbs": "Use a vacuum cleaner and dab with a damp cloth",
+
+        "animal-hair": "Use a vacuum cleaner and rubber gloves to remove the hair"
     },
 
     "questions": {
@@ -145,35 +230,6 @@
                 }
             }
         },
-        "living-room-furniture": {
-            "if": [
-                "living-room",
-                "furniture"
-            ],
-            "text": "What furniture are you cleaning?",
-            "answers": {
-                "answer1": {
-                    "text": "fabric-furniture",
-                    "fact": "fabric-furniture"
-                },
-                "answer2": {
-                    "text": "leather-furniture",
-                    "fact": "leather-furniture"
-                },
-                "answer3": {
-                    "text": "wood-furniture",
-                    "fact": "wood-furniture"
-                },
-                "answer4": {
-                    "text": "metal-furniture",
-                    "fact": "metal-furniture"
-                },
-                "answer5": {
-                    "text": "glass-furniture",
-                    "fact": "glass-furniture"
-                }
-            }
-        },
         "living-room-furniture-stain": {
             "if": [
                 "living-room",
@@ -200,6 +256,35 @@
                 "answer5": {
                     "text": "animal-hair",
                     "fact": "animal-hair"
+                }
+            }
+        },
+        "living-room-furniture": {
+            "if": [
+                "living-room",
+                "furniture"
+            ],
+            "text": "What furniture are you cleaning?",
+            "answers": {
+                "answer1": {
+                    "text": "fabric-furniture",
+                    "fact": "fabric-furniture"
+                },
+                "answer2": {
+                    "text": "leather-furniture",
+                    "fact": "leather-furniture"
+                },
+                "answer3": {
+                    "text": "wood-furniture",
+                    "fact": "wood-furniture"
+                },
+                "answer4": {
+                    "text": "metal-furniture",
+                    "fact": "metal-furniture"
+                },
+                "answer5": {
+                    "text": "glass-furniture",
+                    "fact": "glass-furniture"
                 }
             }
         }
