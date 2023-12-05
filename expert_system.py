@@ -29,6 +29,7 @@ class ExpertSystem:
 
     def add_fact(self, fact):
         """Adds a fact to the known facts"""
+        print(f"Added fact: {fact}")
         self.known_facts.append(fact)
 
     def get_output_detail(self):
@@ -91,3 +92,6 @@ class ExpertSystem:
                 self.kb['questions'].pop(key)
 
                 self.observer.set_question(question)
+
+                # Break the loop incase multiple questions can be asked
+                break

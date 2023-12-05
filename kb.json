@@ -17,14 +17,18 @@
         "animal-hair": "A substance used for warmth",
         "glass": "A hard transparent substance",
 
+        "floors": "A horizontal structure used to separate rooms",
         "carpets": "A soft floor covering",
         "floor-tiles": "A hard floor covering made from multiple pieces",
         "wood-floor": "A hard organic floor covering",
         "marble-floor": "A hard floor covering",
         "laminate-flooring": "A hard floor covering similar to plastic",
+
+        "walls": "A vertical structure used to separate rooms",
         "wallpaper": "A covering for walls",
         "wall-tiles": "A covering for walls made from multiple pieces",
 
+        "furniture": "A movable object used for sitting or sleeping",
         "fabric-furniture": "A material used for furniture with a unique texture",
         "leather-furniture": "A material used for furniture made from animal skin",
         "wood-furniture": "A material used for furniture made from trees",
@@ -39,89 +43,163 @@
     },
 
     "rules": {
-        "rule1": {
+        "fabric-furniture-blood": {
             "if": [
-                "human-yes"
+                "fabric-furniture",
+                "blood"
             ],
             "then": {
-                "output": "passed-turing"
+                "output": "fabric-furniture-blood"
             }
         },
-        "rule2": {
+        "leather-furniture-blood": {
             "if": [
-                "human-no"
+                "leather-furniture",
+                "blood"
             ],
             "then": {
-                "output": "failed-turing"
+                "output": "leather-furniture-blood"
             }
         },
-        "rule3": {
+        "wood-furniture-blood": {
             "if": [
-                "nonhuman-yes"
+                "wood-furniture",
+                "blood"
             ],
             "then": {
-                "output": "failed-turing"
+                "output": "wood-furniture-blood"
             }
         },
-        "rule4": {
+        "metal-furniture-blood": {
             "if": [
-                "nonhuman-no"
+                "metal-furniture",
+                "blood"
             ],
             "then": {
-                "output": "passed-turing"
+                "output": "metal-furniture-blood"
+            }
+        },
+        "glass-furniture-blood": {
+            "if": [
+                "glass-furniture",
+                "blood"
+            ],
+            "then": {
+                "output": "glass-furniture-blood"
             }
         }
     },
 
     "outputs": {
-        "passed-turing": "You passed the Turing test!",
-        "failed-turing": "You failed the Turing test!"
+        "fabric-furniture-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "leather-furniture-blood": "Use a wet cloth and make sure to clean the surface frequently",
+        "wood-furniture-blood": "Use a wet cloth and then dry the furniture immediately",
+        "metal-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "glass-furniture-blood": "Use a wet cloth with cleaning vinegar and then a dry cloth"
     },
 
     "questions": {
-        "question1": {
+        "which-room": {
             "if": [],
-            "text": "Are you human?",
+            "text": "Which room are you cleaning?",
             "answers": {
                 "answer1": {
-                    "text": "Yes",
-                    "fact": "human"
+                    "text": "Living Room",
+                    "fact": "living-room"
                 },
                 "answer2": {
-                    "text": "No",
-                    "fact": "nonhuman"
+                    "text": "Kitchen",
+                    "fact": "kitchen"
+                },
+                "answer3": {
+                    "text": "Bedroom",
+                    "fact": "bedroom"
+                },
+                "answer4": {
+                    "text": "Bathroom",
+                    "fact": "bathroom"
+                },
+                "answer5": {
+                    "text": "Hallway",
+                    "fact": "hallway"
                 }
             }
         },
-        "question2": {
+        "living-room": {
             "if": [
-                "human"
+                "living-room"
             ],
-            "text": "Are you sure?",
+            "text": "What are you cleaning in the living room?",
             "answers": {
                 "answer1": {
-                    "text": "Yes",
-                    "fact": "human-yes"
+                    "text": "furniture",
+                    "fact": "furniture"
                 },
                 "answer2": {
-                    "text": "No",
-                    "fact": "human-no"
+                    "text": "walls",
+                    "fact": "walls"
+                },
+                "answer3": {
+                    "text": "floor",
+                    "fact": "floor"
                 }
             }
         },
-        "question3": {
+        "living-room-furniture": {
             "if": [
-                "nonhuman"
+                "living-room",
+                "furniture"
             ],
-            "text": "Are you sure?",
+            "text": "What furniture are you cleaning?",
             "answers": {
                 "answer1": {
-                    "text": "Yes",
-                    "fact": "nonhuman-yes"
+                    "text": "fabric-furniture",
+                    "fact": "fabric-furniture"
                 },
                 "answer2": {
-                    "text": "No",
-                    "fact": "nonhuman-no"
+                    "text": "leather-furniture",
+                    "fact": "leather-furniture"
+                },
+                "answer3": {
+                    "text": "wood-furniture",
+                    "fact": "wood-furniture"
+                },
+                "answer4": {
+                    "text": "metal-furniture",
+                    "fact": "metal-furniture"
+                },
+                "answer5": {
+                    "text": "glass-furniture",
+                    "fact": "glass-furniture"
+                }
+            }
+        },
+        "living-room-furniture-stain": {
+            "if": [
+                "living-room",
+                "furniture"
+            ],
+            "text": "What stain are you cleaning?",
+            "answers": {
+                "answer1": {
+                    "text": "blood",
+                    "fact": "blood"
+                },
+                "answer2": {
+                    "text": "ink",
+                    "fact": "ink"
+                },
+                "answer3": {
+                    "text": "food",
+                    "fact": "food"
+                },
+                "answer4": {
+                    "text": "food-crumbs",
+                    "fact": "food-crumbs"
+                },
+                "answer5": {
+                    "text": "animal-hair",
+                    "fact": "animal-hair"
                 }
             }
         }
