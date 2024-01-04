@@ -38,6 +38,7 @@
         "wood-furniture": "A material used for furniture made from trees",
         "metal-furniture": "A material used for furniture made from metal",
         "glass-furniture": "A material used for furniture made from glass",
+        "plastic-furniture": "A material used for furniture made from plastic",
         "counter-top" : "A flat surface used for preparing food",
         "toilet": "A device used for relieving oneself",
         "faucet": "A device used for controlling water flow",
@@ -63,6 +64,106 @@
             ],
             "then": {
                 "output": "general-house-cleaning-thorough"
+            }
+        },
+        "general-quick-living-room": {
+            "if": [
+                "living-room",
+                "general-room-cleaning",
+                "quick-cleaning"
+            ],
+            "then": {
+                "output": "general-quick-living-room"
+            }
+        },
+        "general-thorough-living-room": {
+            "if": [
+                "living-room",
+                "general-room-cleaning",
+                "thorough-cleaning"
+            ],
+            "then": {
+                "output": "general-thorough-living-room"
+            }
+        },
+        "general-quick-kitchen": {
+            "if": [
+                "kitchen",
+                "general-room-cleaning",
+                "quick-cleaning"
+            ],
+            "then": {
+                "output": "general-quick-kitchen"
+            }
+        },
+        "general-thorough-kitchen": {
+            "if": [
+                "kitchen",
+                "general-room-cleaning",
+                "thorough-cleaning"
+            ],
+            "then": {
+                "output": "general-thorough-kitchen"
+            }
+        },
+        "general-quick-bedroom": {
+            "if": [
+                "bedroom",
+                "general-room-cleaning",
+                "quick-cleaning"
+            ],
+            "then": {
+                "output": "general-quick-bedroom"
+            }
+        },
+        "general-thorough-bedroom": {
+            "if": [
+                "bedroom",
+                "general-room-cleaning",
+                "thorough-cleaning"
+            ],
+            "then": {
+                "output": "general-thorough-bedroom"
+            }
+        },
+        "general-quick-bathroom": {
+            "if": [
+                "bathroom",
+                "general-room-cleaning",
+                "quick-cleaning"
+            ],
+            "then": {
+                "output": "general-quick-bathroom"
+            }
+        },
+        "general-thorough-bathroom": {
+            "if": [
+                "bathroom",
+                "general-room-cleaning",
+                "thorough-cleaning"
+            ],
+            "then": {
+                "output": "general-thorough-bathroom"
+            }
+        },
+        "general-quick-hallway": {
+            "if": [
+                "hallway",
+                "general-room-cleaning",
+                "quick-cleaning"
+            ],
+            "then": {
+                "output": "general-quick-hallway"
+            }
+        },
+        "general-thorough-hallway": {
+            "if": [
+                "hallway",
+                "general-room-cleaning",
+                "thorough-cleaning"
+            ],
+            "then": {
+                "output": "general-thorough-hallway"
             }
         },
         "fabric-furniture-blood": {
@@ -183,12 +284,30 @@
             "then": {
                 "output": "animal-hair"
             }
+        },
+        "glass" : {
+            "if": [
+                "glass"
+            ],
+            "then": {
+                "output": "glass"
+            }
         }
     },
 
     "outputs": {
         "general-house-cleaning-quick": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
         "general-house-cleaning-thorough": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
+        "general-quick-living-room": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
+        "general-thorough-living-room": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
+        "general-quick-kitchen": "Clean the floors, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
+        "general-thorough-kitchen": "Clean the floors, walls, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
+        "general-quick-bedroom": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
+        "general-thorough-bedroom": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
+        "general-quick-bathroom": "Clean the floors, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
+        "general-thorough-bathroom": "Clean the floors, walls, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
+        "general-quick-hallway": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
+        "general-thorough-hallway": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
 
         "fabric-furniture-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
         "leather-furniture-blood": "Use a wet cloth and make sure to clean the surface frequently",
@@ -205,7 +324,9 @@
         "furniture-food": "Use a kitchen towel and finish with a damp cloth",
         "furniture-food-crumbs": "Use a vacuum cleaner and dab with a damp cloth",
 
-        "animal-hair": "Use a vacuum cleaner and rubber gloves to remove the hair"
+        "animal-hair": "Use a vacuum cleaner and rubber gloves to remove the hair",
+
+        "glass": "Remove the large pieces carefully from the surface. Then, use a vacuum cleaner to remove the small pieces. You can check whether you have removed all the pieces by using a flashlight. Finally, if an an additional substance is left, you can reset and start again with the new substance."
     },
 
     "questions": {
@@ -214,16 +335,16 @@
             "text": "What type of cleaning do you need help with?",
             "answers": {
                 "answer1": {
-                    "text": "General house cleaning guide",
-                    "fact": ["general-house-cleaning", "area-cleaning"]
+                    "text": "General cleaning guide",
+                    "fact": "general-cleaning"
                 },
                 "answer2": {
-                    "text": "Cleaning a certain room",
-                    "fact": ["room-cleaning", "area-cleaning"]
+                    "text": "Cleaning something in a specific room",
+                    "fact": ["specific-room-cleaning", "room-cleaning"]
                 },
                 "answer3": {
                     "text": "Cleaning a specific furniture",
-                    "fact": "furniture-cleaning"
+                    "fact": ["furniture", "stain-cleaning"]
                 },
                 "answer4": {
                     "text": "Cleaning a specific stain or dirt",
@@ -231,8 +352,26 @@
                 }
             }
         },
+        "what-in-the-house": {
+            "if": [
+                "general-cleaning"
+            ],
+            "text": "What do you want a general cleaning guide for?",
+            "answers": {
+                "answer1": {
+                    "text": "I need a guide for the whole house",
+                    "fact": ["general-house-cleaning"]
+                },
+                "answer2": {
+                    "text": "A specific room",
+                    "fact": ["general-room-cleaning", "room-cleaning"]
+                }
+            }
+        },
         "what-type": {
-            "if": ["area-cleaning"],
+            "if": [
+                "general-cleaning"
+            ],
             "text": "Do you want to do quick cleaning or thorough cleaning?",
             "answers": {
                 "answer1": {
@@ -252,16 +391,16 @@
             "text": "Which room are you cleaning?",
             "answers": {
                 "answer1": {
-                    "text": "Living Room",
-                    "fact": "living-room"
+                    "text": "Living room",
+                    "fact": ["living-room", "what-in-the-room"]
                 },
                 "answer2": {
                     "text": "Kitchen",
-                    "fact": "kitchen"
+                    "fact": ["kitchen", "what-in-the-room"]
                 },
                 "answer3": {
                     "text": "Bedroom",
-                    "fact": "bedroom"
+                    "fact": ["bedroom", "what-in-the-room"]
                 },
                 "answer4": {
                     "text": "Bathroom",
@@ -269,36 +408,67 @@
                 },
                 "answer5": {
                     "text": "Hallway",
-                    "fact": "hallway"
+                    "fact": ["hallway", "what-in-the-room"]
                 }
             }
         },
-        "living-room": {
+        "in-the-room-cleaning": {
             "if": [
-                "living-room"
+                "what-in-the-room"
             ],
-            "text": "What are you cleaning in the living room?",
+            "text": "What are you cleaning in the room?",
             "answers": {
                 "answer1": {
-                    "text": "The Furniture",
+                    "text": "The furniture",
                     "fact": "furniture"
                 },
                 "answer2": {
-                    "text": "The Walls",
+                    "text": "The walls",
                     "fact": "walls"
                 },
                 "answer3": {
-                    "text": "The Floor",
+                    "text": "The floor",
                     "fact": "floor"
                 }
             }
         },
-        "living-room-furniture-stain": {
+        "furniture-cleaning": {
             "if": [
-                "living-room",
                 "furniture"
             ],
-            "text": "What stain are you cleaning?",
+            "text": "What furniture are you cleaning?",
+            "answers": {
+                "answer1": {
+                    "text": "Fabric furniture",
+                    "fact": "fabric-furniture"
+                },
+                "answer2": {
+                    "text": "Leather furniture",
+                    "fact": "leather-furniture"
+                },
+                "answer3": {
+                    "text": "Wood furniture",
+                    "fact": "wood-furniture"
+                },
+                "answer4": {
+                    "text": "Metal furniture",
+                    "fact": "metal-furniture"
+                },
+                "answer5": {
+                    "text": "Glass furniture",
+                    "fact": "glass-furniture"
+                },
+                "answer6": {
+                    "text": "Plastic furniture",
+                    "fact": "plastic-furniture"
+                }
+            }
+        },
+        "stain-cleaning": {
+            "if": [
+                "furniture"
+            ],
+            "text": "What stain or substance are you cleaning?",
             "answers": {
                 "answer1": {
                     "text": "Blood",
@@ -313,41 +483,60 @@
                     "fact": "food"
                 },
                 "answer4": {
-                    "text": "Food Crumbs",
+                    "text": "Food crumbs",
                     "fact": "food-crumbs"
                 },
                 "answer5": {
-                    "text": "Animal Hair",
+                    "text": "Animal hair",
                     "fact": "animal-hair"
+                },
+                "answer6": {
+                    "text": "Glass",
+                    "fact": "glass"
                 }
             }
         },
-        "living-room-furniture": {
+        "wall-cleaning": {
             "if": [
-                "living-room",
-                "furniture"
+                "walls"
             ],
-            "text": "What furniture are you cleaning?",
+            "text": "What are you cleaning on the walls?",
             "answers": {
                 "answer1": {
-                    "text": "Fabric Furniture",
-                    "fact": "fabric-furniture"
+                    "text": "Wallpaper",
+                    "fact": "wallpaper"
                 },
                 "answer2": {
-                    "text": "Leather Furniture",
-                    "fact": "leather-furniture"
+                    "text": "Wall tiles",
+                    "fact": "wall-tiles"
+                }
+            }
+        },
+        "floor-cleaning": {
+            "if": [
+                "floor"
+            ],
+            "text": "What are you cleaning on the floor?",
+            "answers": {
+                "answer1": {
+                    "text": "Carpet",
+                    "fact": "carpet"
+                },
+                "answer2": {
+                    "text": "Floor tiles",
+                    "fact": "floor-tiles"
                 },
                 "answer3": {
-                    "text": "Wood Furniture",
-                    "fact": "wood-furniture"
+                    "text": "Wood floor",
+                    "fact": "wood-floor"
                 },
                 "answer4": {
-                    "text": "Metal Furniture",
-                    "fact": "metal-furniture"
+                    "text": "Marble floor",
+                    "fact": "marble-floor"
                 },
                 "answer5": {
-                    "text": "Glass Furniture",
-                    "fact": "glass-furniture"
+                    "text": "Laminate flooring",
+                    "fact": "laminate-flooring"
                 }
             }
         }
