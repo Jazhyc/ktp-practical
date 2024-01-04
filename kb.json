@@ -215,13 +215,11 @@
             "answers": {
                 "answer1": {
                     "text": "General house cleaning guide",
-                    "fact": "general-house-cleaning",
-                    "next": "what-type"
+                    "fact": ["general-house-cleaning", "area-cleaning"]
                 },
                 "answer2": {
                     "text": "Cleaning a certain room",
-                    "fact": "room-cleaning",
-                    "next": "what-type"
+                    "fact": ["room-cleaning", "area-cleaning"]
                 },
                 "answer3": {
                     "text": "Cleaning a specific furniture",
@@ -234,7 +232,7 @@
             }
         },
         "what-type": {
-            "if": [],
+            "if": ["area-cleaning"],
             "text": "Do you want to do quick cleaning or thorough cleaning?",
             "answers": {
                 "answer1": {
