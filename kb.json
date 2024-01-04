@@ -1,6 +1,10 @@
 {
     "facts": {
 
+        "general-house-cleaning": "General house cleaning is the process of cleaning the house",
+        "quick-cleaning": "Quick cleaning is the process of cleaning the house quickly",
+        "thorough-cleaning": "Thorough cleaning is the process of cleaning the house thoroughly",
+
         "living-room": "The main room in the house",
         "kitchen": "The place where food is prepared",
         "bedroom": "The place where people sleep",
@@ -43,6 +47,24 @@
     },
 
     "rules": {
+        "general-house-cleaning-quick": {
+            "if": [
+                "general-house-cleaning",
+                "quick-cleaning"
+            ],
+            "then": {
+                "output": "general-house-cleaning-quick"
+            }
+        },
+        "general-house-cleaning-thorough": {
+            "if": [
+                "general-house-cleaning",
+                "thorough-cleaning"
+            ],
+            "then": {
+                "output": "general-house-cleaning-thorough"
+            }
+        },
         "fabric-furniture-blood": {
             "if": [
                 "fabric-furniture",
@@ -165,6 +187,9 @@
     },
 
     "outputs": {
+        "general-house-cleaning-quick": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
+        "general-house-cleaning-thorough": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
+
         "fabric-furniture-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
         "leather-furniture-blood": "Use a wet cloth and make sure to clean the surface frequently",
         "wood-furniture-blood": "Use a wet cloth and then dry the furniture immediately",
@@ -184,8 +209,48 @@
     },
 
     "questions": {
-        "which-room": {
+        "start": {
             "if": [],
+            "text": "What type of cleaning do you need help with?",
+            "answers": {
+                "answer1": {
+                    "text": "General house cleaning guide",
+                    "fact": "general-house-cleaning",
+                    "next": "what-type"
+                },
+                "answer2": {
+                    "text": "Cleaning a certain room",
+                    "fact": "room-cleaning",
+                    "next": "what-type"
+                },
+                "answer3": {
+                    "text": "Cleaning a specific furniture",
+                    "fact": "furniture-cleaning"
+                },
+                "answer4": {
+                    "text": "Cleaning a specific stain or dirt",
+                    "fact": "stain-cleaning"
+                }
+            }
+        },
+        "what-type": {
+            "if": [],
+            "text": "Do you want to do quick cleaning or thorough cleaning?",
+            "answers": {
+                "answer1": {
+                    "text": "Quick cleaning",
+                    "fact": "quick-cleaning"
+                },
+                "answer2": {
+                    "text": "Thorough cleaning",
+                    "fact": "thorough-cleaning"
+                }
+            }
+        },
+        "which-room": {
+            "if": [
+                "room-cleaning"
+            ],
             "text": "Which room are you cleaning?",
             "answers": {
                 "answer1": {
