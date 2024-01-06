@@ -2,24 +2,31 @@
     "facts": {
 
         "general-house-cleaning": "General house cleaning is the process of cleaning the house",
-        "quick-cleaning": "Quick cleaning is the process of cleaning the house quickly",
-        "thorough-cleaning": "Thorough cleaning is the process of cleaning the house thoroughly",
+        "quick-or-thorough": "Quick cleaning is the process of cleaning the house quickly. Thorough cleaning is the process of cleaning the house thoroughly",
+        "quick-cleaning": "Quick cleaning is the process of cleaning the house or a specific room quickly",
+        "thorough-cleaning": "Thorough cleaning is the process of cleaning the house or a specific room thoroughly",
 
+        "room-options": "Room options are the rooms in the house",
+        "room": "A space in the house",
         "living-room": "The main room in the house",
         "kitchen": "The place where food is prepared",
         "bedroom": "The place where people sleep",
         "bathroom": "The place where people bathe and relieve themselves",
-        "hallway": "Connector rooms in the house",
+        "hallway": "Connector rooms in the house",        
 
+        "stains": "A substance that is difficult to remove",
+        "no-stain": "A surface without a stain",
         "oil": "A liquid used for cooking",
         "blood": "A liquid used for living",
         "water": "A liquid used for drinking",
         "dust": "Unpleasant particles in the air",
         "ink": "A liquid used for writing",
-        "food": "A substance used for eating",
-        "food-crumbs": "Small particles of food",
         "animal-hair": "A substance used for warmth",
         "glass": "A hard transparent substance",
+        "food": "A substance used for eating",
+        "liquid-food": "A food that is liquid",
+        "solid-food": "A food that is solid",
+        "mixed-food": "A food that is both liquid and solid",
 
         "floors": "A horizontal structure used to separate rooms",
         "carpets": "A soft floor covering",
@@ -31,6 +38,9 @@
         "walls": "A vertical structure used to separate rooms",
         "wallpaper": "A covering for walls",
         "wall-tiles": "A covering for walls made from multiple pieces",
+        "paint-wall": "A covering for walls made from paint",
+        "wooden-wall": "A covering for walls made from wood",
+        "brick-wall": "A covering for walls made from bricks",
 
         "furniture": "A movable object used for sitting or sleeping",
         "fabric-furniture": "A material used for furniture with a unique texture",
@@ -38,16 +48,12 @@
         "wood-furniture": "A material used for furniture made from trees",
         "metal-furniture": "A material used for furniture made from metal",
         "glass-furniture": "A material used for furniture made from glass",
-        "plastic-furniture": "A material used for furniture made from plastic",
-        "counter-top" : "A flat surface used for preparing food",
-        "toilet": "A device used for relieving oneself",
-        "faucet": "A device used for controlling water flow",
-        "sink": "A device used for holding water",
-        "bath-tub": "A device used for bathing"
+        "plastic-furniture": "A material used for furniture made from plastic"
 
     },
 
     "rules": {
+
         "general-house-cleaning-quick": {
             "if": [
                 "general-house-cleaning",
@@ -66,6 +72,7 @@
                 "output": "general-house-cleaning-thorough"
             }
         },
+
         "general-quick-living-room": {
             "if": [
                 "living-room",
@@ -166,10 +173,454 @@
                 "output": "general-thorough-hallway"
             }
         },
+
+        "carpet-no-stain": {
+            "if": [
+                "no-stain",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-no-stain"
+            }
+        },
+        "floor-tiles-no-stain": {
+            "if": [
+                "no-stain",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-no-stain"
+            }
+        },
+        "wood-floor-no-stain": {
+            "if": [
+                "no-stain",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-no-stain"
+            }
+        },
+        "marble-floor-no-stain": {
+            "if": [
+                "no-stain",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-no-stain"
+            }
+        },
+        "laminate-flooring-no-stain": {
+            "if": [
+                "no-stain",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-no-stain"
+            }
+        },
+
+        
+
+        "wallpaper-no-stain": {
+            "if": [
+                "no-stain",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-no-stain"
+            }
+        },
+        "wall-tiles-no-stain": {
+            "if": [
+                "no-stain",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-no-stain"
+            }
+        },
+        "paint-wall-no-stain": {
+            "if": [
+                "no-stain",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-no-stain"
+            }
+        },
+        "wooden-wall-no-stain": {
+            "if": [
+                "no-stain",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-no-stain"
+            }
+        },
+        "brick-wall-no-stain": {
+            "if": [
+                "no-stain",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-no-stain"
+            }
+        },
+
+        "fabric-furniture-no-stain": {
+            "if": [
+                "no-stain",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-no-stain"
+            }
+        },
+        "leather-furniture-no-stain": {
+            "if": [
+                "no-stain",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-no-stain"
+            }
+        },
+        "wood-furniture-no-stain": {
+            "if": [
+                "no-stain",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-no-stain"
+            }
+        },
+        "metal-furniture-no-stain": {
+            "if": [
+                "no-stain",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-no-stain"
+            }
+        },
+        "glass-furniture-no-stain": {
+            "if": [
+                "no-stain",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-no-stain"
+            }
+        },
+        "plastic-furniture-no-stain": {
+            "if": [
+                "no-stain",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-no-stain"
+            }
+        },
+
+        "carpet-oil": {
+            "if": [
+                "oil",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-oil"
+            }
+        },
+        "floor-tiles-oil": {
+            "if": [
+                "oil",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-oil"
+            }
+        },
+        "wood-floor-oil": {
+            "if": [
+                "oil",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-oil"
+            }
+        },
+        "marble-floor-oil": {
+            "if": [
+                "oil",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-oil"
+            }
+        },
+        "laminate-flooring-oil": {
+            "if": [
+                "oil",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-oil"
+            }
+        },
+
+        "wallpaper-oil": {
+            "if": [
+                "oil",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-oil"
+            }
+        },
+        "wall-tiles-oil": {
+            "if": [
+                "oil",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-oil"
+            }
+        },
+        "paint-wall-oil": {
+            "if": [
+                "oil",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-oil"
+            }
+        },
+        "wooden-wall-oil": {
+            "if": [
+                "oil",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-oil"
+            }
+        },
+        "brick-wall-oil": {
+            "if": [
+                "oil",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-oil"
+            }
+        },
+
+        "fabric-furniture-oil": {
+            "if": [
+                "oil",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-oil"
+            }
+        },
+        "leather-furniture-oil": {
+            "if": [
+                "oil",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-oil"
+            }
+        },
+        "wood-furniture-oil": {
+            "if": [
+                "oil",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-oil"
+            }
+        },
+        "metal-furniture-oil": {
+            "if": [
+                "oil",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-oil"
+            }
+        },
+        "glass-furniture-oil": {
+            "if": [
+                "oil",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-oil"
+            }
+        },
+        "plastic-furniture-oil": {
+            "if": [
+                "oil",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-oil"
+            }
+        },
+
+        "fabric-funiture-oil": {
+            "if": [
+                "oil",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-oil"
+            }
+        },
+        "leather-funiture-oil": {
+            "if": [
+                "oil",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-oil"
+            }
+        },
+        "wood-funiture-oil": {
+            "if": [
+                "oil",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-oil"
+            }
+        },
+        "metal-funiture-oil": {
+            "if": [
+                "oil",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-oil"
+            }
+        },
+        "glass-funiture-oil": {
+            "if": [
+                "oil",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-oil"
+            }
+        },
+        "plastic-funiture-oil": {
+            "if": [
+                "oil",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-oil"
+            }
+        },
+
+        "carpet-blood": {
+            "if": [
+                "blood",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-blood"
+            }
+        },
+        "floor-tiles-blood": {
+            "if": [
+                "blood",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-blood"
+            }
+        },
+        "wood-floor-blood": {
+            "if": [
+                "blood",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-blood"
+            }
+        },
+        "marble-floor-blood": {
+            "if": [
+                "blood",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-blood"
+            }
+        },
+        "laminate-flooring-blood": {
+            "if": [
+                "blood",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-blood"
+            }
+        },
+
+        "wallpaper-blood": {
+            "if": [
+                "blood",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-blood"
+            }
+        },
+        "wall-tiles-blood": {
+            "if": [
+                "blood",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-blood"
+            }
+        },
+        "paint-wall-blood": {
+            "if": [
+                "blood",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-blood"
+            }
+        },
+        "wooden-wall-blood": {
+            "if": [
+                "blood",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-blood"
+            }
+        },
+        "brick-wall-blood": {
+            "if": [
+                "blood",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-blood"
+            }
+        },
+
         "fabric-furniture-blood": {
             "if": [
-                "fabric-furniture",
-                "blood"
+                "blood",
+                "fabric-furniture"
             ],
             "then": {
                 "output": "fabric-furniture-blood"
@@ -177,8 +628,8 @@
         },
         "leather-furniture-blood": {
             "if": [
-                "leather-furniture",
-                "blood"
+                "blood",
+                "leather-furniture"
             ],
             "then": {
                 "output": "leather-furniture-blood"
@@ -186,8 +637,8 @@
         },
         "wood-furniture-blood": {
             "if": [
-                "wood-furniture",
-                "blood"
+                "blood",
+                "wood-furniture"
             ],
             "then": {
                 "output": "wood-furniture-blood"
@@ -195,8 +646,8 @@
         },
         "metal-furniture-blood": {
             "if": [
-                "metal-furniture",
-                "blood"
+                "blood",
+                "metal-furniture"
             ],
             "then": {
                 "output": "metal-furniture-blood"
@@ -204,18 +655,266 @@
         },
         "glass-furniture-blood": {
             "if": [
-                "glass-furniture",
-                "blood"
+                "blood",
+                "glass-furniture"
             ],
             "then": {
                 "output": "glass-furniture-blood"
             }
         },
+        "plastic-furniture-blood": {
+            "if": [
+                "blood",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-blood"
+            }
+        },
+
+        "carpet-dust": {
+            "if": [
+                "dust",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-dust"
+            }
+        },
+        "floor-tiles-dust": {
+            "if": [
+                "dust",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-dust"
+            }
+        },
+        "wood-floor-dust": {
+            "if": [
+                "dust",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-dust"
+            }
+        },
+        "marble-floor-dust": {
+            "if": [
+                "dust",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-dust"
+            }
+        },
+        "laminate-flooring-dust": {
+            "if": [
+                "dust",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-dust"
+            }
+        },
+
+        "wallpaper-dust": {
+            "if": [
+                "dust",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-dust"
+            }
+        },
+        "wall-tiles-dust": {
+            "if": [
+                "dust",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-dust"
+            }
+        },
+        "paint-wall-dust": {
+            "if": [
+                "dust",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-dust"
+            }
+        },
+        "wooden-wall-dust": {
+            "if": [
+                "dust",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-dust"
+            }
+        },
+        "brick-wall-dust": {
+            "if": [
+                "dust",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-dust"
+            }
+        },
+
+        "fabric-furniture-dust": {
+            "if": [
+                "dust",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-dust"
+            }
+        },
+        "leather-furniture-dust": {
+            "if": [
+                "dust",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-dust"
+            }
+        },
+        "wood-furniture-dust": {
+            "if": [
+                "dust",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-dust"
+            }
+        },
+        "metal-furniture-dust": {
+            "if": [
+                "dust",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-dust"
+            }
+        },
+        "glass-furniture-dust": {
+            "if": [
+                "dust",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-dust"
+            }
+        },
+        "plastic-furniture-dust": {
+            "if": [
+                "dust",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-dust"
+            }
+        },
+
+        "carpet-ink": {
+            "if": [
+                "ink",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-ink"
+            }
+        },
+        "floor-tiles-ink": {
+            "if": [
+                "ink",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-ink"
+            }
+        },
+        "wood-floor-ink": {
+            "if": [
+                "ink",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-ink"
+            }
+        },
+        "marble-floor-ink": {
+            "if": [
+                "ink",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-ink"
+            }
+        },
+        "laminate-flooring-ink": {
+            "if": [
+                "ink",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-ink"
+            }
+        },
+
+        "wallpaper-ink": {
+            "if": [
+                "ink",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-ink"
+            }
+        },
+        "wall-tiles-ink": {
+            "if": [
+                "ink",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-ink"
+            }
+        },
+        "paint-wall-ink": {
+            "if": [
+                "ink",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-ink"
+            }
+        },
+        "wooden-wall-ink": {
+            "if": [
+                "ink",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-ink"
+            }
+        },
+        "brick-wall-ink": {
+            "if": [
+                "ink",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-ink"
+            }
+        },
 
         "fabric-furniture-ink": {
             "if": [
-                "fabric-furniture",
-                "ink"
+                "ink",
+                "fabric-furniture"
             ],
             "then": {
                 "output": "fabric-furniture-ink"
@@ -223,8 +922,8 @@
         },
         "leather-furniture-ink": {
             "if": [
-                "leather-furniture",
-                "ink"
+                "ink",
+                "leather-furniture"
             ],
             "then": {
                 "output": "leather-furniture-ink"
@@ -232,8 +931,8 @@
         },
         "wood-furniture-ink": {
             "if": [
-                "wood-furniture",
-                "ink"
+                "ink",
+                "wood-furniture"
             ],
             "then": {
                 "output": "wood-furniture-ink"
@@ -241,8 +940,8 @@
         },
         "metal-furniture-ink": {
             "if": [
-                "metal-furniture",
-                "ink"
+                "ink",
+                "metal-furniture"
             ],
             "then": {
                 "output": "metal-furniture-ink"
@@ -250,34 +949,474 @@
         },
         "glass-furniture-ink": {
             "if": [
-                "glass-furniture",
-                "ink"
+                "ink",
+                "glass-furniture"
             ],
             "then": {
                 "output": "glass-furniture-ink"
             }
         },
-
-        "furniture-food" : {
+        "plastic-furniture-ink": {
             "if": [
-                "food",
-                "furniture"
+                "ink",
+                "plastic-furniture"
             ],
             "then": {
-                "output": "furniture-food"
-            }
-        },
-        "furniture-food-crumbs" : {
-            "if": [
-                "food-crumbs",
-                "furniture"
-            ],
-            "then": {
-                "output": "furniture-food-crumbs"
+                "output": "plastic-furniture-ink"
             }
         },
 
-        "animal-hair" : {
+        "carpet-liquid-food": {
+            "if": [
+                "liquid-food",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-liquid-food"
+            }
+        },
+        "floor-tiles-liquid-food": {
+            "if": [
+                "liquid-food",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-liquid-food"
+            }
+        },
+        "wood-floor-liquid-food": {
+            "if": [
+                "liquid-food",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-liquid-food"
+            }
+        },
+        "marble-floor-liquid-food": {
+            "if": [
+                "liquid-food",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-liquid-food"
+            }
+        },
+        "laminate-flooring-liquid-food": {
+            "if": [
+                "liquid-food",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-liquid-food"
+            }
+        },
+
+        "wallpaper-liquid-food": {
+            "if": [
+                "liquid-food",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-liquid-food"
+            }
+        },
+        "wall-tiles-liquid-food": {
+            "if": [
+                "liquid-food",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-liquid-food"
+            }
+        },
+        "paint-wall-liquid-food": {
+            "if": [
+                "liquid-food",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-liquid-food"
+            }
+        },
+        "wooden-wall-liquid-food": {
+            "if": [
+                "liquid-food",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-liquid-food"
+            }
+        },
+        "brick-wall-liquid-food": {
+            "if": [
+                "liquid-food",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-liquid-food"
+            }
+        },
+
+        "fabric-furniture-liquid-food": {
+            "if": [
+                "liquid-food",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-liquid-food"
+            }
+        },
+        "leather-furniture-liquid-food": {
+            "if": [
+                "liquid-food",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-liquid-food"
+            }
+        },
+        "wood-furniture-liquid-food": {
+            "if": [
+                "liquid-food",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-liquid-food"
+            }
+        },
+        "metal-furniture-liquid-food": {
+            "if": [
+                "liquid-food",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-liquid-food"
+            }
+        },
+        "glass-furniture-liquid-food": {
+            "if": [
+                "liquid-food",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-liquid-food"
+            }
+        },
+        "plastic-furniture-liquid-food": {
+            "if": [
+                "liquid-food",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-liquid-food"
+            }
+        },
+
+        "carpet-solid-food": {
+            "if": [
+                "solid-food",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-solid-food"
+            }
+        },
+        "floor-tiles-solid-food": {
+            "if": [
+                "solid-food",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-solid-food"
+            }
+        },
+        "wood-floor-solid-food": {
+            "if": [
+                "solid-food",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-solid-food"
+            }
+        },
+        "marble-floor-solid-food": {
+            "if": [
+                "solid-food",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-solid-food"
+            }
+        },
+        "laminate-flooring-solid-food": {
+            "if": [
+                "solid-food",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-solid-food"
+            }
+        },
+
+        "wallpaper-solid-food": {
+            "if": [
+                "solid-food",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-solid-food"
+            }
+        },
+        "wall-tiles-solid-food": {
+            "if": [
+                "solid-food",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-solid-food"
+            }
+        },
+        "paint-wall-solid-food": {
+            "if": [
+                "solid-food",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-solid-food"
+            }
+        },
+        "wooden-wall-solid-food": {
+            "if": [
+                "solid-food",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-solid-food"
+            }
+        },
+        "brick-wall-solid-food": {
+            "if": [
+                "solid-food",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-solid-food"
+            }
+        },
+
+        "fabric-furniture-solid-food": {
+            "if": [
+                "solid-food",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-solid-food"
+            }
+        },
+        "leather-furniture-solid-food": {
+            "if": [
+                "solid-food",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-solid-food"
+            }
+        },
+        "wood-furniture-solid-food": {
+            "if": [
+                "solid-food",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-solid-food"
+            }
+        },
+        "metal-furniture-solid-food": {
+            "if": [
+                "solid-food",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-solid-food"
+            }
+        },
+        "glass-furniture-solid-food": {
+            "if": [
+                "solid-food",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-solid-food"
+            }
+        },
+        "plastic-furniture-solid-food": {
+            "if": [
+                "solid-food",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-solid-food"
+            }
+        },
+
+        "carpet-mixed-food": {
+            "if": [
+                "mixed-food",
+                "carpet"
+            ],
+            "then": {
+                "output": "carpet-mixed-food"
+            }
+        },
+        "floor-tiles-mixed-food": {
+            "if": [
+                "mixed-food",
+                "floor-tiles"
+            ],
+            "then": {
+                "output": "floor-tiles-mixed-food"
+            }
+        },
+        "wood-floor-mixed-food": {
+            "if": [
+                "mixed-food",
+                "wood-floor"
+            ],
+            "then": {
+                "output": "wood-floor-mixed-food"
+            }
+        },
+        "marble-floor-mixed-food": {
+            "if": [
+                "mixed-food",
+                "marble-floor"
+            ],
+            "then": {
+                "output": "marble-floor-mixed-food"
+            }
+        },
+        "laminate-flooring-mixed-food": {
+            "if": [
+                "mixed-food",
+                "laminate-flooring"
+            ],
+            "then": {
+                "output": "laminate-flooring-mixed-food"
+            }
+        },
+
+        "wallpaper-mixed-food": {
+            "if": [
+                "mixed-food",
+                "wallpaper"
+            ],
+            "then": {
+                "output": "wallpaper-mixed-food"
+            }
+        },
+        "wall-tiles-mixed-food": {
+            "if": [
+                "mixed-food",
+                "wall-tiles"
+            ],
+            "then": {
+                "output": "wall-tiles-mixed-food"
+            }
+        },
+        "paint-wall-mixed-food": {
+            "if": [
+                "mixed-food",
+                "paint-wall"
+            ],
+            "then": {
+                "output": "paint-wall-mixed-food"
+            }
+        },
+        "wooden-wall-mixed-food": {
+            "if": [
+                "mixed-food",
+                "wooden-wall"
+            ],
+            "then": {
+                "output": "wooden-wall-mixed-food"
+            }
+        },
+        "brick-wall-mixed-food": {
+            "if": [
+                "mixed-food",
+                "brick-wall"
+            ],
+            "then": {
+                "output": "brick-wall-mixed-food"
+            }
+        },
+
+        "fabric-furniture-mixed-food": {
+            "if": [
+                "mixed-food",
+                "fabric-furniture"
+            ],
+            "then": {
+                "output": "fabric-furniture-mixed-food"
+            }
+        },
+        "leather-furniture-mixed-food": {
+            "if": [
+                "mixed-food",
+                "leather-furniture"
+            ],
+            "then": {
+                "output": "leather-furniture-mixed-food"
+            }
+        },
+        "wood-furniture-mixed-food": {
+            "if": [
+                "mixed-food",
+                "wood-furniture"
+            ],
+            "then": {
+                "output": "wood-furniture-mixed-food"
+            }
+        },
+        "metal-furniture-mixed-food": {
+            "if": [
+                "mixed-food",
+                "metal-furniture"
+            ],
+            "then": {
+                "output": "metal-furniture-mixed-food"
+            }
+        },
+        "glass-furniture-mixed-food": {
+            "if": [
+                "mixed-food",
+                "glass-furniture"
+            ],
+            "then": {
+                "output": "glass-furniture-mixed-food"
+            }
+        },
+        "plastic-furniture-mixed-food": {
+            "if": [
+                "mixed-food",
+                "plastic-furniture"
+            ],
+            "then": {
+                "output": "plastic-furniture-mixed-food"
+            }
+        },
+
+        "water": {
+            "if": [
+                "water"
+            ],
+            "then": {
+                "output": "water"
+            }
+        },
+
+        "animal-hair": {
             "if": [
                 "animal-hair"
             ],
@@ -285,7 +1424,8 @@
                 "output": "animal-hair"
             }
         },
-        "glass" : {
+
+        "glass": {
             "if": [
                 "glass"
             ],
@@ -293,6 +1433,7 @@
                 "output": "glass"
             }
         }
+
     },
 
     "outputs": {
@@ -309,23 +1450,160 @@
         "general-quick-hallway": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
         "general-thorough-hallway": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
 
+        "carpet-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "floor-tiles-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "wood-floor-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "marble-floor-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "laminate-flooring-no-stain": "Use a vacuum cleaner and then a damp cloth",
+
+        "wallpaper-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "wall-tiles-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "paint-wall-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "wooden-wall-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "brick-wall-no-stain": "Use a vacuum cleaner and then a damp cloth",
+
+        "fabric-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "leather-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "wood-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "metal-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "glass-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "plastic-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+
+        "carpet-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "floor-tiles-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-floor-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "marble-floor-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "laminate-flooring-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "wallpaper-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wall-tiles-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "paint-wall-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wooden-wall-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "brick-wall-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "fabric-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "leather-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "metal-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "glass-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "plastic-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "carpet-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "floor-tiles-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "wood-floor-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "marble-floor-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "laminate-flooring-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+
+        "wallpaper-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "wall-tiles-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "paint-wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "wooden-wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "brick-wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+
         "fabric-furniture-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
         "leather-furniture-blood": "Use a wet cloth and make sure to clean the surface frequently",
         "wood-furniture-blood": "Use a wet cloth and then dry the furniture immediately",
         "metal-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "glass-furniture-blood": "Use a wet cloth with cleaning vinegar and then a dry cloth",
+        "plastic-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
-        "fabric-furniture-ink": "Dab with milk or stain remover and then wipe with a dry cloth",
-        "leather-furniture-ink": "Use a wet cloth with milk or stain remover and make sure to clean the surface frequently",
-        "wood-furniture-ink": "Use a wet cloth with milk or stain remover and then dry the furniture immediately",
+        "carpet-dust": "Use a vacuum cleaner and then a damp cloth",
+        "floor-tiles-dust": "Use a vacuum cleaner and then a damp cloth",
+        "wood-floor-dust": "Use a vacuum cleaner and then a damp cloth",
+        "marble-floor-dust": "Use a vacuum cleaner and then a damp cloth",
+        "laminate-flooring-dust": "Use a vacuum cleaner and then a damp cloth",
+
+        "wallpaper-dust": "Use a vacuum cleaner and then a damp cloth",
+        "wall-tiles-dust": "Use a vacuum cleaner and then a damp cloth",
+        "paint-wall-dust": "Use a vacuum cleaner and then a damp cloth",
+        "wooden-wall-dust": "Use a vacuum cleaner and then a damp cloth",
+        "brick-wall-dust": "Use a vacuum cleaner and then a damp cloth",
+
+        "fabric-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+        "leather-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+        "wood-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+        "metal-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+        "glass-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+        "plastic-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+
+        "carpet-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "floor-tiles-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-floor-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "marble-floor-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "laminate-flooring-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "wallpaper-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wall-tiles-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "paint-wall-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wooden-wall-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "brick-wall-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "fabric-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "leather-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "metal-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "glass-furniture-ink": "Use a wet cloth with cleaning vinegar and then a dry cloth",
+        "glass-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "plastic-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
-        "furniture-food": "Use a kitchen towel and finish with a damp cloth",
-        "furniture-food-crumbs": "Use a vacuum cleaner and dab with a damp cloth",
+        "carpet-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "floor-tiles-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-floor-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "marble-floor-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "laminate-flooring-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
+        "wallpaper-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wall-tiles-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "paint-wall-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wooden-wall-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "brick-wall-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "fabric-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "leather-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "metal-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "glass-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "plastic-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "carpet-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "floor-tiles-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-floor-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "marble-floor-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "laminate-flooring-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "wallpaper-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wall-tiles-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "paint-wall-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wooden-wall-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "brick-wall-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "fabric-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
+        "leather-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
+        "wood-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
+        "metal-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
+        "glass-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
+        "plastic-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
+
+        "carpet-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "floor-tiles-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wood-floor-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "marble-floor-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "laminate-flooring-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "wallpaper-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wall-tiles-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "paint-wall-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wooden-wall-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "brick-wall-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+
+        "fabric-furniture-mixed-food": "Use a vacuum cleaner and then a damp cloth",
+        "leather-furniture-mixed-food": "Use a vacuum cleaner and then a damp cloth",
+        "wood-furniture-mixed-food": "Use a vacuum cleaner and then a damp cloth",
+        "metal-furniture-mixed-food": "Use a vacuum cleaner and then a damp cloth",
+        "glass-furniture-mixed-food": "Use a vacuum cleaner and then a damp cloth",
+        "plastic-furniture-mixed-food": "Use a vacuum cleaner and then a damp cloth",
+
+        "water": "Use a dry cloth to wipe the surface. Then, let it dry. Do not try to use a hair dryer or fan to dry the surface. This might result in a burn stain and unfortunately, our program does not account for burn stains.",
         "animal-hair": "Use a vacuum cleaner and rubber gloves to remove the hair",
-
         "glass": "Remove the large pieces carefully from the surface. Then, use a vacuum cleaner to remove the small pieces. You can check whether you have removed all the pieces by using a flashlight. Finally, if an an additional substance is left, you can reset and start again with the new substance."
     },
 
@@ -335,20 +1613,16 @@
             "text": "What type of cleaning do you need help with?",
             "answers": {
                 "answer1": {
-                    "text": "General cleaning guide",
-                    "fact": "general-cleaning"
+                    "text": "General cleaning guides",
+                    "fact": ["general-cleaning", "quick-or-thorough"]
                 },
                 "answer2": {
-                    "text": "Cleaning something in a specific room",
-                    "fact": ["specific-room-cleaning", "room-cleaning"]
+                    "text": "Cleaning specific furniture, walls, or floors",
+                    "fact": ["no-stain", "room-surface"]
                 },
                 "answer3": {
-                    "text": "Cleaning a specific furniture",
-                    "fact": ["furniture", "stain-cleaning"]
-                },
-                "answer4": {
                     "text": "Cleaning a specific stain or dirt",
-                    "fact": "stain-cleaning"
+                    "fact": ["stain", "room-surface"]
                 }
             }
         },
@@ -360,17 +1634,17 @@
             "answers": {
                 "answer1": {
                     "text": "I need a guide for the whole house",
-                    "fact": ["general-house-cleaning"]
+                    "fact": "general-house-cleaning"
                 },
                 "answer2": {
                     "text": "A specific room",
-                    "fact": ["general-room-cleaning", "room-cleaning"]
+                    "fact": ["general-room-cleaning", "room-options"]
                 }
             }
         },
         "what-type": {
             "if": [
-                "general-cleaning"
+                "quick-or-thorough"
             ],
             "text": "Do you want to do quick cleaning or thorough cleaning?",
             "answers": {
@@ -386,21 +1660,21 @@
         },
         "which-room": {
             "if": [
-                "room-cleaning"
+                "room-options"
             ],
             "text": "Which room are you cleaning?",
             "answers": {
                 "answer1": {
                     "text": "Living room",
-                    "fact": ["living-room", "what-in-the-room"]
+                    "fact": "living-room"
                 },
                 "answer2": {
                     "text": "Kitchen",
-                    "fact": ["kitchen", "what-in-the-room"]
+                    "fact": "kitchen"
                 },
                 "answer3": {
                     "text": "Bedroom",
-                    "fact": ["bedroom", "what-in-the-room"]
+                    "fact": "bedroom"
                 },
                 "answer4": {
                     "text": "Bathroom",
@@ -408,13 +1682,13 @@
                 },
                 "answer5": {
                     "text": "Hallway",
-                    "fact": ["hallway", "what-in-the-room"]
+                    "fact": "hallway"
                 }
             }
         },
-        "in-the-room-cleaning": {
+        "room-cleaning": {
             "if": [
-                "what-in-the-room"
+                "room-surface"
             ],
             "text": "What are you cleaning in the room?",
             "answers": {
@@ -464,9 +1738,65 @@
                 }
             }
         },
+        "wall-cleaning": {
+            "if": [
+                "walls"
+            ],
+            "text": "What is the type of surface on the walls?",
+            "answers": {
+                "answer1": {
+                    "text": "Wallpaper",
+                    "fact": "wallpaper"
+                },
+                "answer2": {
+                    "text": "Wall tiles",
+                    "fact": "wall-tiles"
+                },
+                "answer3": {
+                    "text": "Paint",
+                    "fact": "paint-wall"
+                },
+                "answer4": {
+                    "text": "Wooden wall",
+                    "fact": "wooden-wall"
+                },
+                "answer5": {
+                    "text": "Brick wall",
+                    "fact": "brick-wall"
+                }
+            }
+        },
+        "floor-cleaning": {
+            "if": [
+                "floor"
+            ],
+            "text": "What type of material is on the floor?",
+            "answers": {
+                "answer1": {
+                    "text": "Carpet",
+                    "fact": "carpet"
+                },
+                "answer2": {
+                    "text": "Tiles",
+                    "fact": "floor-tiles"
+                },
+                "answer3": {
+                    "text": "Wood",
+                    "fact": "wood-floor"
+                },
+                "answer4": {
+                    "text": "Marble",
+                    "fact": "marble-floor"
+                },
+                "answer5": {
+                    "text": "Laminate flooring",
+                    "fact": "laminate-flooring"
+                }
+            }
+        },
         "stain-cleaning": {
             "if": [
-                "furniture"
+                "stain"
             ],
             "text": "What stain or substance are you cleaning?",
             "answers": {
@@ -479,64 +1809,48 @@
                     "fact": "ink"
                 },
                 "answer3": {
+                    "text": "Oil",
+                    "fact": "oil"
+                },
+                "answer4": {
+                    "text": "Water",
+                    "fact": "water"
+                },
+                "answer5": {
+                    "text": "Dust",
+                    "fact": "dust"
+                },
+                "answer6": {
                     "text": "Food",
                     "fact": "food"
                 },
-                "answer4": {
-                    "text": "Food crumbs",
-                    "fact": "food-crumbs"
-                },
-                "answer5": {
+                "answer8": {
                     "text": "Animal hair",
                     "fact": "animal-hair"
                 },
-                "answer6": {
+                "answer9": {
                     "text": "Glass",
                     "fact": "glass"
                 }
             }
         },
-        "wall-cleaning": {
+        "food-substance": {
             "if": [
-                "walls"
+                "food"
             ],
-            "text": "What are you cleaning on the walls?",
+            "text": "What type of food is it?",
             "answers": {
                 "answer1": {
-                    "text": "Wallpaper",
-                    "fact": "wallpaper"
+                    "text": "liquid food",
+                    "fact": "liquid-food"
                 },
                 "answer2": {
-                    "text": "Wall tiles",
-                    "fact": "wall-tiles"
-                }
-            }
-        },
-        "floor-cleaning": {
-            "if": [
-                "floor"
-            ],
-            "text": "What are you cleaning on the floor?",
-            "answers": {
-                "answer1": {
-                    "text": "Carpet",
-                    "fact": "carpet"
-                },
-                "answer2": {
-                    "text": "Floor tiles",
-                    "fact": "floor-tiles"
+                    "text": "solid food or crumbs",
+                    "fact": "food-crumbs"
                 },
                 "answer3": {
-                    "text": "Wood floor",
-                    "fact": "wood-floor"
-                },
-                "answer4": {
-                    "text": "Marble floor",
-                    "fact": "marble-floor"
-                },
-                "answer5": {
-                    "text": "Laminate flooring",
-                    "fact": "laminate-flooring"
+                    "text": "liquid and solid food",
+                    "fact": "mixed-food"
                 }
             }
         }
