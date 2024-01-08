@@ -10,7 +10,16 @@ class QuestionForm(FlaskForm):
 
 
 class Frontend:
+    """
+    This class is responsible for the frontend of the application.
+    It is a Flask application that is running in a separate thread.
+    """
+
     def __init__(self):
+        """
+        Creates a frontend for the application
+        Sets up the routes for the application and create variables for the question and answer
+        """
         self.app = Flask(__name__)
         self.app.config['SECRET_KEY'] = 'ktp'
         self.setup_routes()
@@ -21,9 +30,18 @@ class Frontend:
         self.selected_answer = None
 
     def set_controller(self, controller):
+        """
+        Sets the controller for the frontend
+        Allows the frontend to communicate with the model
+        """
         self.controller = controller
 
     def setup_routes(self):
+        """
+        Sets up the webpages to be displayed
+        When the user visits the root page, the question page is displayed
+        Once all questions are answered, the answer page is displayed
+        """
         @self.app.route('/', methods=['GET', 'POST'])
         def view():
 
@@ -53,19 +71,31 @@ class Frontend:
             return redirect('/')
 
     def get_input(self):
+        """
+        Returns the answer selected by the user
+        """
         return self.selected_answer
 
     def set_question(self, question):
+        """
+        Allows the controller to set the question to be displayed
+        """
         self.question_answers_pair = question
         self.selected_answer = None
 
     def display_answer(self, answer):
+        """
+        Allows the controller to display the answer to the user
+        """
         self.selected_answer = answer
         self.question_answers_pair = None
 
         print(answer)
 
     def run(self):
+        """
+        Runs the frontend application
+        """
         self.app.run(debug=True)
 
 
