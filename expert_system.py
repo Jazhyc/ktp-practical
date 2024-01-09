@@ -44,6 +44,13 @@ class ExpertSystem:
 
     def get_output_detail(self):
         """Returns the output detail"""
+
+        print(self.output)
+
+        # If the json contains a list of outputs, return the list of details
+        if isinstance(self.output, list):
+            return [self.kb['outputs'][fact] for fact in self.output]
+
         return self.kb['outputs'][self.output]
 
     def reset(self):

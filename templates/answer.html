@@ -4,7 +4,15 @@
 <div class="container py-5">
     <div class="form-container">
         <h1 class="mb-4">Solution</h1>
-        <p class="answer-text">{{ answer }}</p>
+        {% if answer|is_list %}
+            <ul class="answer-text">
+                {% for item in answer %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="answer-text">{{ answer }}</p>
+        {% endif %}
         <button class="reset-button" onclick="window.location.href='/reset'">RESET</button>
     </div>
 </div>

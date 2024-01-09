@@ -60,7 +60,7 @@
                 "quick-cleaning"
             ],
             "then": {
-                "output": "general-house-cleaning-quick"
+                "output": ["normal-room", "general-house-cleaning-quick"]
             }
         },
         "general-house-cleaning-thorough": {
@@ -1437,7 +1437,11 @@
     },
 
     "outputs": {
-        "general-house-cleaning-quick": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
+
+        "normal-room": "Clean the floors and furniture",
+
+        "general-house-cleaning-quick": "NEEDS ADDITIONAL INFO",
+
         "general-house-cleaning-thorough": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
         "general-quick-living-room": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
         "general-thorough-living-room": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
