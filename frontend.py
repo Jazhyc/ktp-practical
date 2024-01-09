@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect
 from flask_wtf import FlaskForm
 from wtforms import RadioField, SubmitField
 from wtforms.validators import DataRequired
+import os
 
 
 class QuestionForm(FlaskForm):
@@ -29,6 +30,8 @@ class Frontend:
         self.question_answers_pair = None
         self.selected_answer = None
 
+        self.images = os.listdir('static')
+
     def set_controller(self, controller):
         """
         Sets the controller for the frontend
@@ -54,12 +57,14 @@ class Frontend:
                 form = QuestionForm()
                 form.answer.choices = [(answer['fact'], answer['text']) for answer in self.question_answers_pair['answers'].values()]
 
+                print(form.answer.choices)
+
                 if form.validate_on_submit():
                     self.selected_answer = form.answer.data
                     self.controller.update_model(self.selected_answer)
                     return redirect('/')
 
-                return render_template('question.html', form=form, question=self.question_answers_pair['text'])
+                return render_template('question.html', form=form, question=self.question_answers_pair['text'], filenames=self.images)
 
             return render_template('answer.html', answer=self.selected_answer)
 
@@ -69,6 +74,13 @@ class Frontend:
             self.question_answers_pair = None
             self.controller.reset()
             return redirect('/')
+
+        @self.app.template_filter('is_list')
+        def is_list(value):
+            """
+            Returns True if the value is a list
+            """
+            return isinstance(value, list)
 
     def get_input(self):
         """
