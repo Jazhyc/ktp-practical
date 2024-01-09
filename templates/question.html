@@ -10,7 +10,7 @@
                 {% for subfield in form.answer %}
                     <div class="grid-item">
                         {% set data = subfield.data[0] if subfield.data | is_list and subfield.data|length > 0 else subfield.data %}
-                        <label>
+                        <label style="cursor: pointer;">
                             {% set found = false %}
                             {% for ext in ['.jpg', '.png', '.jpeg'] if not found %}
                                 {% set filename = data + ext %}

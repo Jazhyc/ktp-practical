@@ -1,4 +1,3 @@
-from helper import *
 from expert_system import ExpertSystem
 from frontend import Frontend
 from controller import Controller
