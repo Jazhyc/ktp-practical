@@ -12,7 +12,7 @@
         "kitchen": "The place where food is prepared",
         "bedroom": "The place where people sleep",
         "bathroom": "The place where people bathe and relieve themselves",
-        "hallway": "Connector rooms in the house",        
+        "hallway": "Connector rooms in the house",
 
         "stains": "A substance that is difficult to remove",
         "no-stain": "A surface without a stain",
@@ -60,7 +60,7 @@
                 "quick-cleaning"
             ],
             "then": {
-                "output": ["normal-room", "general-house-cleaning-quick"]
+                "output": "general-house-cleaning-quick"
             }
         },
         "general-house-cleaning-thorough": {
@@ -1437,66 +1437,68 @@
     },
 
     "outputs": {
-
-        "normal-room": "Clean the floors and furniture",
-
-        "general-house-cleaning-quick": "NEEDS ADDITIONAL INFO",
-
+        "general-house-cleaning-quick": "Clean the floors and furniture, NEEDS ADDITIONAL INFO hello",
         "general-house-cleaning-thorough": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
-        "general-quick-living-room": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
-        "general-thorough-living-room": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
-        "general-quick-kitchen": "Clean the floors, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
-        "general-thorough-kitchen": "Clean the floors, walls, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
-        "general-quick-bedroom": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
-        "general-thorough-bedroom": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
-        "general-quick-bathroom": "Clean the floors, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
-        "general-thorough-bathroom": "Clean the floors, walls, counter-tops, and furniture, NEEDS ADDITIONAL INFO",
-        "general-quick-hallway": "Clean the floors and furniture, NEEDS ADDITIONAL INFO",
-        "general-thorough-hallway": "Clean the floors, walls, and furniture, NEEDS ADDITIONAL INFO",
 
-        "carpet-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "declutter": "Declutter and clean up all non-essential objects in the room.",
+        "general-quick-living-room": "First declutter and clean up all non-essential objects in the livingroom. Then dust the general surfaces. Vacuum and the the floors.",
+        "general-thorough-living-room": "First declutter and clean up all non-essential objects in the livingroom. Then dust the general surfaces. Use a vacuum cleaner with a special brush to clean between the gaps and the surface of the sofa. Use a soft, dry cloth to dust the TV. With a damp cloth dust the TV cabinet, table, sidetables.  Vacuum and then mop the floors.",
+
+        "general-quick-kitchen": "Declutter. Declutter and clean up all non-essential objects in the room. From the fridge and the freezer, remove all things past their due date. Clean the kitchen cabinets and the counter with a cloth using all-purpose cleaner, finish by wiping with a dry cloth. Clean the sink using the scour side of a scouring-sponge and SCHUURMIDDEL. For the tap, use ANTIKALK, use the scour side of a scouring-sponge. Rinse off the ANTIKALK and dry using a dry cloth. For the stove, use an all-purpose cleaner and the scour side of a scouring sponge. For persistent stains use degreaser. Finish wiping off with a dry cloth. Vacuum the kitchen to finish.",
+        "general-thorough-kitchen": "Declutter and clean up all non-essential objects in the room. Start with the freezer. For the freezer, remove the plug and put a kitchen towel in front, on the floor, open the door of the freezer and remove all items. You can put this in a COOLBAG??? Put a few pans with hot water inside. Close the door. Wait a while. Clean the kitchen cabinets, especially the handles, and the counter with a cloth using all-purpose cleaner, finish by wiping with a dry cloth. Clean the sink using the scour side of a scouring-sponge and SCHUURMIDDEL. For the tap, use ANTIKALK, use the scour side of a scouring-sponge. Rinse off the ANTIKALK and dry using a dry cloth. For the stove, use an all-purpose cleaner and the scour side of a scouring pad. For persistent stains use degreaser. Finish wiping off with a dry cloth. For the hood, remove the detachable elements. If possible, you can put them in the dishwasher. If this does not fit, clean them using a degreaser and the dishwashing brush. Rinse off and let dry. For the oven, use a degreaser and the soft side of a scouring sponge. For the outside of the oven door, you can use a glass cleaner. For the inside of the oven door, you can still use degreaser. For the dishwasher, clean out the detachable filters. For the refrigerator, remove all elements past their due date. Remove all detachable elements and wash them off using dishssoap. The inside of the refrigerator can be cleaned using a cloth and allpurpose cleaner. Afterwards make it dry with a dry cloth. For the detachable elements, you can dry them off and put them back. Now, back to the freezer. Open the door. Remove the pans and look whether the ice has melted. Put a catcher in the freezer that can catch ice. Then use a SCRAPER? to remove excess ice. Dry the freezer using a dry cloth. Clean the rubber parts of the door using dishssoap. Put the plug back into its socket! Return all items into the freezer. Close the door. Remove the kitchentowel from the floor. For the coffeemachine, ONTKALK once every three months using a ONTKALKER for your coffeemachine, this can be machine dependent. Some machines don't need to be ONTKALKT. For the kettle, use ONTKALKER for the kettle. Once evry three months. To finish, vacuum and mop the kitchen.",
+
+        "general-quick-bedroom": "Declutter and clean up all non-essential objects in the room. Change the sheets of the bed. Dust the cabinets and lamps with a damp cloth and allpurpose cleaner. Vacuum, also under the bed.",
+        "general-thorough-bedroom": "Declutter and clean up all non-essential objects in the room. Change the sheets of the bed. Dust the cabinets and lamps with a damp cloth and allpurpose cleaner. Vacuum, also under the bed. Mop the bedroom to finish.",
+
+        "general-quick-bathroom": "Declutter and clean up all non-essential objects in the room. For the shower, spray ANTIKALK everywhere in the shower. For the joints, use the scour side of a scouring sponge. Rinse with water. Use a wiper to move all the water to the drain. Clean the drain of the shower. Clean the sink using the scour side of a scouring-sponge and SCHUURMIDDEL. For the tap, use ANTIKALK, use the scour side of a scouring-sponge. Rinse off the ANTIKALK and dry using a dry cloth. For the toilet, use toiletcleaner and use the brush to scrob. Flush the toilet. Use a damp cloth with allpurpose cleaner to wipe the seat. Use a dry cloth to dry the surfaces.",
+        "general-thorough-bathroom": "Declutter and clean up all non-essential objects in the room. For the shower, spray ANTIKALK everywhere in the shower. For the joints, use the scour side of a scouring sponge. Rinse with water. Use a wiper to move all the water to the drain. Clean the drain of the shower. Clean the sink using the scour side of a scouring-sponge and SCHUURMIDDEL. For the tap, use ANTIKALK, use the scour side of a scouring-sponge. Rinse off the ANTIKALK and dry using a dry cloth. For the toilet, use toiletcleaner and use the brush to scrob. Flush the toilet. Use a damp cloth with allpurpose cleaner to wipe the seat. Use a dry cloth to dry the surfaces.",
+
+        "general-quick-hallway": "Vacuum the floors and the doormat.",
+        "general-thorough-hallway": "Declutter and clean up all non-essential objects in the room. Vacuum the floor, smash the mat. You can use a mop to clean out the spiderwebs.",
+
+        "carpet-no-stain": "Vacuum the carpet. If your vacuum has a special brush for the carpet, it is wise to use that. Otherwise you can take the nozzle off.",
         "floor-tiles-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "wood-floor-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "marble-floor-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "laminate-flooring-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "wood-floor-no-stain": "Use a vacuum cleaner.",
+        "marble-floor-no-stain": "Vacuum the floor and then mop the floor using allpurpose cleaner.",
+        "laminate-flooring-no-stain": "Vacuum the floor using a soft brush, then mop using a damp mop, not too wet. There is special laminate cleaner to use. If you don't have this, you can use allpurpose cleaner for mopping.",
 
-        "wallpaper-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "wall-tiles-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "paint-wall-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "wooden-wall-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "brick-wall-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "wallpaper-no-stain": "This is not generally necessary.",
+        "wall-tiles-no-stain": "Use a damp cloth with allpurpose cleaner.",
+        "paint-wall-no-stain": "This is not generally necessary.",
+        "wooden-wall-no-stain": "This is not generally necessary.",
+        "brick-wall-no-stain": "This is not generally necessary.",
 
-        "fabric-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "leather-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "wood-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "metal-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "glass-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
-        "plastic-furniture-no-stain": "Use a vacuum cleaner and then a damp cloth",
+        "fabric-furniture-no-stain": "Use a vacuum cleaner for the couch. There are special brushes for this. If you do not have this, consider not using a nozzle.",
+        "leather-furniture-no-stain": "Use a damp cloth and make sure to clean the surface frequently. There is also special leather grease to use which can be used once so often.",
+        "wood-furniture-no-stain": "It is possible to use a special wood oil to treat the wood. Otherwise, use a damp cloth.",
+        "metal-furniture-no-stain": "Use a damp cloth with a glass cleaner and then a dry cloth.",
+        "glass-furniture-no-stain": "Use a damp cloth with a glass cleaner and then a dry cloth.",
+        "plastic-furniture-no-stain": "Use a damp cloth with all purpose cleaner and then a dry cloth.",
 
-        "carpet-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "floor-tiles-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "wood-floor-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "marble-floor-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "laminate-flooring-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "carpet-oil": "First dap the stain with a kitchen cloth. Then use a wet cloth with degreaser or dish soap. Rub with a brush until the stain is removed. Then use a dry cloth to dry the carpet. If the stain is not removed, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
+        "floor-tiles-oil": "First use a kitchen cloth to let it soak up the oil. Then use a wet cloth with degreaser, dish soap or hot water with degreaser. Then use a dry cloth to dry the floor.",
+        "wood-floor-oil": "If the floor is untreated, consider using a saw to remove the stain. Otherwise, if the stain remained on top use a kitchen towel to remove the oil. Then use a wet cloth with degreaser, dish soap or hot water with degreaser. Then use a dry cloth to dry the floor.",
+        "marble-floor-oil": "Use a mop with hot water and degreaser. Then use a dry cloth to dry the floor.",
+        "laminate-flooring-oil": "Use a damp mop with lukewarm water. Then use a dry cloth to dry the floor.",
 
-        "wallpaper-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "wall-tiles-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "paint-wall-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "wooden-wall-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "brick-wall-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "wallpaper-oil": "Consider wallpapering the wall again.",
+        "wall-tiles-oil": "Use a kitchen cloth to rub the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
+        "paint-wall-oil": "Use a kitchen cloth to dab the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
+        "wooden-wall-oil": "Use a kitchen cloth to rub remove the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
+        "brick-wall-oil": "Use a kitchen cloth to dab the stain.",
 
-        "fabric-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "leather-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "wood-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "metal-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "glass-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "plastic-furniture-oil": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "fabric-furniture-oil": "Consider buying new furniture.",
+        "leather-furniture-oil": "Use a kitchen cloth to rub the stain. If it is not removed, try using a little bit of dish soap. Dry the furniture with a dry cloth.",
+        "wood-furniture-oil": "Try to rub the stain into the furniture, it is possible that it will not be seen anymore.",
+        "metal-furniture-oil": "Use a kitchen cloth to rub the stain. Dry the furniture with a dry cloth.",
+        "glass-furniture-oil": "First use degreaser to remove it. Then use glass cleaner to remove the degreaser. Let it air dry.",
+        "plastic-furniture-oil": "Use a kitchen cloth to dab the stain. Then you can use dish soap to remove excess oil. Dry the furniture with a dry cloth.",
 
-        "carpet-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "floor-tiles-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "wood-floor-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "marble-floor-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "laminate-flooring-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "carpet-blood": "Dab the stain with cloth and cold water. You can use a brush if necessary. If possible, let it soak in cold water for a while. Then use a dry cloth to dry the carpet. If the stain is not removed, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
+        "floor-tiles-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
+        "wood-floor-blood": "Remove it as quickly as possible using a cold wet cloth. Then use a dry cloth to dry the floor.",
+        "marble-floor-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
+        "laminate-flooring-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
 
         "wallpaper-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
         "wall-tiles-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
@@ -1511,27 +1513,27 @@
         "glass-furniture-blood": "Use a wet cloth with cleaning vinegar and then a dry cloth",
         "plastic-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
-        "carpet-dust": "Use a vacuum cleaner and then a damp cloth",
-        "floor-tiles-dust": "Use a vacuum cleaner and then a damp cloth",
-        "wood-floor-dust": "Use a vacuum cleaner and then a damp cloth",
-        "marble-floor-dust": "Use a vacuum cleaner and then a damp cloth",
-        "laminate-flooring-dust": "Use a vacuum cleaner and then a damp cloth",
+        "carpet-dust": "Vacuum the carpet. If your vacuum has a special brush for the carpet, it is wise to use that. Otherwise you can take the nozzle off.",
+        "floor-tiles-dust": "Vacuum the floor.",
+        "wood-floor-dust": "Vacuum the floor.",
+        "marble-floor-dust": "Vacuum the floor.",
+        "laminate-flooring-dust": "Vacuum the floor, use a soft brush.",
 
-        "wallpaper-dust": "Use a vacuum cleaner and then a damp cloth",
-        "wall-tiles-dust": "Use a vacuum cleaner and then a damp cloth",
-        "paint-wall-dust": "Use a vacuum cleaner and then a damp cloth",
-        "wooden-wall-dust": "Use a vacuum cleaner and then a damp cloth",
-        "brick-wall-dust": "Use a vacuum cleaner and then a damp cloth",
+        "wallpaper-dust": "You can use a duster to remove the dust.",
+        "wall-tiles-dust": "You can use a wet cloth to remove the dust. You may use allpurpose cleaner.",
+        "paint-wall-dust": "You can use a duster to remove the dust.",
+        "wooden-wall-dust": "You can use a duster to remove the dust.",
+        "brick-wall-dust": "You can try to use a broom to remove the dust from the brick wall.",
 
-        "fabric-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
-        "leather-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
-        "wood-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
-        "metal-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
-        "glass-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
-        "plastic-furniture-dust": "Use a vacuum cleaner and then a damp cloth",
+        "fabric-furniture-dust": "Use a vacuum with a small nozzle.",
+        "leather-furniture-dust": "Use a damp cloth to remove the dust.",
+        "wood-furniture-dust": "Use a vacuum cleaner to remove the dust.",
+        "metal-furniture-dust": "Use a damp cloth to remove the dust. You can also use glass cleaner as it will leave no streaks.",
+        "glass-furniture-dust": "Use a damp cloth to remove the dust. You can also use glass cleaner as it will leave no streaks.",
+        "plastic-furniture-dust": "Use a damp cloth to remove the dust.",
 
-        "carpet-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "floor-tiles-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "carpet-ink": "There might be ink remover available for your carpet. Otherwise, if the stain is not removeable, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
+        "floor-tiles-ink": "Use a warm weth cloth to remove the stain.",
         "wood-floor-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "marble-floor-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "laminate-flooring-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
@@ -1549,8 +1551,8 @@
         "glass-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "plastic-furniture-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
-        "carpet-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "floor-tiles-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "carpet-liquid-food": "First try to get most of the food off using a spoon. Then, use a wet cloth to dab the stain. Then use a dry cloth to dry the carpet.",
+        "floor-tiles-liquid-food": "Use a kitchen cloth to remove it. If it is sticky, then use a warm wet cloth to remove it. Finish by using a dry towel to dry the tiles.",
         "wood-floor-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "marble-floor-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "laminate-flooring-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
@@ -1568,8 +1570,8 @@
         "glass-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "plastic-furniture-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
-        "carpet-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "floor-tiles-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "carpet-solid-food": "Vacuum the carpet. If your vacuum has a special brush for the carpet, it is wise to use that. Otherwise you can take the nozzle off. You may aso use a crumble thief.",
+        "floor-tiles-solid-food": "Use a broom and dustpan to remove the food.",
         "wood-floor-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "marble-floor-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "laminate-flooring-solid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
@@ -1587,8 +1589,8 @@
         "glass-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
         "plastic-furniture-solid-food": "Use a vacuum cleaner and then a damp cloth",
 
-        "carpet-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
-        "floor-tiles-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "carpet-mixed-food": "First use a spoon to get most of the food off the carpet. Then dab the stain with a damp cloth. Then use a dry cloth to dry the carpet.",
+        "floor-tiles-mixed-food": "Use some kitchen cloths to remove everything. You can finish by using a wet cloth to remove the rest. Then use a dry cloth to dry the floor.",
         "wood-floor-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "marble-floor-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "laminate-flooring-mixed-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
@@ -1625,7 +1627,7 @@
                     "fact": ["no-stain", "room-surface"]
                 },
                 "answer3": {
-                    "text": "Cleaning a specific stain or dirt",
+                    "text": "Cleaning a specific stain or substance",
                     "fact": ["stain", "room-surface"]
                 }
             }
