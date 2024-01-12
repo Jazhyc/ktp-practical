@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     background: linear-gradient(to right, #0072ff, #8000ff);
     font-family: Arial, sans-serif;
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .answer-text {
-    font-size: 1.5em;
+    font-size: auto;
     color: #333;
 }
 
