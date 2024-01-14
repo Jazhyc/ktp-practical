@@ -1,6 +1,8 @@
 {
     "facts": {
 
+        "tips": "Tips are the tips for cleaning the house",
+
         "general-house-cleaning": "General house cleaning is the process of cleaning the house",
         "quick-or-thorough": "Quick cleaning is the process of cleaning the house quickly. Thorough cleaning is the process of cleaning the house thoroughly",
         "quick-cleaning": "Quick cleaning is the process of cleaning the house or a specific room quickly",
@@ -35,7 +37,7 @@
         "marble-floor": "A hard floor covering",
         "laminate-flooring": "A hard floor covering similar to plastic",
 
-        "walls": "A vertical structure used to separate rooms",
+        "wall": "A vertical structure used to separate rooms",
         "wallpaper": "A covering for walls",
         "wall-tiles": "A covering for walls made from multiple pieces",
         "paint-wall": "A covering for walls made from paint",
@@ -53,6 +55,14 @@
     },
 
     "rules": {
+        "tips": {
+            "if": [
+                "tips"
+            ],
+            "then": {
+                "output": ["tip-whole-house", "tip-cleaning-with-products", "tip-cleaning-products-instructions", "tip-cleaning-supplies"]
+            }
+        },
 
         "general-house-cleaning-quick": {
             "if": [
@@ -226,7 +236,7 @@
                 "wallpaper"
             ],
             "then": {
-                "output": "wallpaper-no-stain"
+                "output": "wallpaper-paint-wood-brick-wall-no-stain"
             }
         },
         "wall-tiles-no-stain": {
@@ -244,7 +254,7 @@
                 "paint-wall"
             ],
             "then": {
-                "output": "paint-wall-no-stain"
+                "output": "wallpaper-paint-wood-brick-wall-no-stain"
             }
         },
         "wooden-wall-no-stain": {
@@ -253,7 +263,7 @@
                 "wooden-wall"
             ],
             "then": {
-                "output": "wooden-wall-no-stain"
+                "output": "wallpaper-paint-wood-brick-wall-no-stain"
             }
         },
         "brick-wall-no-stain": {
@@ -262,7 +272,7 @@
                 "brick-wall"
             ],
             "then": {
-                "output": "brick-wall-no-stain"
+                "output": "wallpaper-paint-wood-brick-wall-no-stain"
             }
         },
 
@@ -299,7 +309,7 @@
                 "metal-furniture"
             ],
             "then": {
-                "output": "metal-furniture-no-stain"
+                "output": "metal-glass-furniture-no-stain"
             }
         },
         "glass-furniture-no-stain": {
@@ -308,7 +318,7 @@
                 "glass-furniture"
             ],
             "then": {
-                "output": "glass-furniture-no-stain"
+                "output": "metal-glass-furniture-no-stain"
             }
         },
         "plastic-furniture-no-stain": {
@@ -382,7 +392,7 @@
                 "wall-tiles"
             ],
             "then": {
-                "output": "wall-tiles-oil"
+                "output": "tiles-paint-wall-oil"
             }
         },
         "paint-wall-oil": {
@@ -391,7 +401,7 @@
                 "paint-wall"
             ],
             "then": {
-                "output": "paint-wall-oil"
+                "output": "tiles-paint-wall-oil"
             }
         },
         "wooden-wall-oil": {
@@ -556,7 +566,7 @@
                 "marble-floor"
             ],
             "then": {
-                "output": "marble-floor-blood"
+                "output": "marble-laminate-floor-blood"
             }
         },
         "laminate-flooring-blood": {
@@ -565,53 +575,17 @@
                 "laminate-flooring"
             ],
             "then": {
-                "output": "laminate-flooring-blood"
+                "output": "marble-laminate-floor-blood"
             }
         },
 
-        "wallpaper-blood": {
+        "wall-blood": {
             "if": [
                 "blood",
-                "wallpaper"
+                "wall"
             ],
             "then": {
-                "output": "wallpaper-blood"
-            }
-        },
-        "wall-tiles-blood": {
-            "if": [
-                "blood",
-                "wall-tiles"
-            ],
-            "then": {
-                "output": "wall-tiles-blood"
-            }
-        },
-        "paint-wall-blood": {
-            "if": [
-                "blood",
-                "paint-wall"
-            ],
-            "then": {
-                "output": "paint-wall-blood"
-            }
-        },
-        "wooden-wall-blood": {
-            "if": [
-                "blood",
-                "wooden-wall"
-            ],
-            "then": {
-                "output": "wooden-wall-blood"
-            }
-        },
-        "brick-wall-blood": {
-            "if": [
-                "blood",
-                "brick-wall"
-            ],
-            "then": {
-                "output": "brick-wall-blood"
+                "output": "wall-blood"
             }
         },
 
@@ -648,7 +622,7 @@
                 "metal-furniture"
             ],
             "then": {
-                "output": "metal-furniture-blood"
+                "output": "metal-plastic-furniture-blood"
             }
         },
         "glass-furniture-blood": {
@@ -666,7 +640,7 @@
                 "plastic-furniture"
             ],
             "then": {
-                "output": "plastic-furniture-blood"
+                "output": "metal-plastic-furniture-blood"
             }
         },
 
@@ -685,7 +659,7 @@
                 "floor-tiles"
             ],
             "then": {
-                "output": "floor-tiles-dust"
+                "output": "tiles-wood-marble-floor-dust"
             }
         },
         "wood-floor-dust": {
@@ -694,7 +668,7 @@
                 "wood-floor"
             ],
             "then": {
-                "output": "wood-floor-dust"
+                "output": "tiles-wood-marble-floor-dust"
             }
         },
         "marble-floor-dust": {
@@ -703,7 +677,7 @@
                 "marble-floor"
             ],
             "then": {
-                "output": "marble-floor-dust"
+                "output": "tiles-wood-marble-floor-dust"
             }
         },
         "laminate-flooring-dust": {
@@ -722,7 +696,7 @@
                 "wallpaper"
             ],
             "then": {
-                "output": "wallpaper-dust"
+                "output": "wallpaper-paint-wood-wall-dust"
             }
         },
         "wall-tiles-dust": {
@@ -740,7 +714,7 @@
                 "paint-wall"
             ],
             "then": {
-                "output": "paint-wall-dust"
+                "output": "wallpaper-paint-wood-wall-dust"
             }
         },
         "wooden-wall-dust": {
@@ -749,7 +723,7 @@
                 "wooden-wall"
             ],
             "then": {
-                "output": "wooden-wall-dust"
+                "output": "wallpaper-paint-wood-wall-dust"
             }
         },
         "brick-wall-dust": {
@@ -777,7 +751,7 @@
                 "leather-furniture"
             ],
             "then": {
-                "output": "leather-furniture-dust"
+                "output": "leather-plastic-furniture-dust"
             }
         },
         "wood-furniture-dust": {
@@ -795,7 +769,7 @@
                 "metal-furniture"
             ],
             "then": {
-                "output": "metal-furniture-dust"
+                "output": "metal-glass-furniture-dust"
             }
         },
         "glass-furniture-dust": {
@@ -804,7 +778,7 @@
                 "glass-furniture"
             ],
             "then": {
-                "output": "glass-furniture-dust"
+                "output": "metal-glass-furniture-dust"
             }
         },
         "plastic-furniture-dust": {
@@ -813,7 +787,7 @@
                 "plastic-furniture"
             ],
             "then": {
-                "output": "plastic-furniture-dust"
+                "output": "leather-plastic-furniture-dust"
             }
         },
 
@@ -1025,7 +999,7 @@
                 "wall-tiles"
             ],
             "then": {
-                "output": "wall-tiles-liquid-food"
+                "output": "wall-tiles-paint-wall-liquid-food"
             }
         },
         "paint-wall-liquid-food": {
@@ -1034,7 +1008,7 @@
                 "paint-wall"
             ],
             "then": {
-                "output": "paint-wall-liquid-food"
+                "output": "wall-tiles-paint-wall-liquid-food"
             }
         },
         "wooden-wall-liquid-food": {
@@ -1089,7 +1063,7 @@
                 "metal-furniture"
             ],
             "then": {
-                "output": "metal-furniture-liquid-food"
+                "output": "metal-glass-plastic-furniture-liquid-food"
             }
         },
         "glass-furniture-liquid-food": {
@@ -1098,7 +1072,7 @@
                 "glass-furniture"
             ],
             "then": {
-                "output": "glass-furniture-liquid-food"
+                "output": "metal-glass-plastic-furniture-liquid-food"
             }
         },
         "plastic-furniture-liquid-food": {
@@ -1107,7 +1081,7 @@
                 "plastic-furniture"
             ],
             "then": {
-                "output": "plastic-furniture-liquid-food"
+                "output": "metal-glass-plastic-furniture-liquid-food"
             }
         },
 
@@ -1126,7 +1100,7 @@
                 "floor-tiles"
             ],
             "then": {
-                "output": "floor-tiles-solid-food"
+                "output": "floor-tiles-wood-floor-solid-food"
             }
         },
         "wood-floor-solid-food": {
@@ -1135,7 +1109,7 @@
                 "wood-floor"
             ],
             "then": {
-                "output": "wood-floor-solid-food"
+                "output": "floor-tiles-wood-floor-solid-food"
             }
         },
         "marble-floor-solid-food": {
@@ -1181,7 +1155,7 @@
                 "paint-wall"
             ],
             "then": {
-                "output": "paint-wall-solid-food"
+                "output": "paint-wooden-wall-solid-food"
             }
         },
         "wooden-wall-solid-food": {
@@ -1190,7 +1164,7 @@
                 "wooden-wall"
             ],
             "then": {
-                "output": "wooden-wall-solid-food"
+                "output": "paint-wooden-wall-solid-food"
             }
         },
         "brick-wall-solid-food": {
@@ -1218,7 +1192,7 @@
                 "leather-furniture"
             ],
             "then": {
-                "output": "leather-furniture-solid-food"
+                "output": "leather-wood-metal-glass-plastic-furniture-solid-food"
             }
         },
         "wood-furniture-solid-food": {
@@ -1227,7 +1201,7 @@
                 "wood-furniture"
             ],
             "then": {
-                "output": "wood-furniture-solid-food"
+                "output": "leather-wood-metal-glass-plastic-furniture-solid-food"
             }
         },
         "metal-furniture-solid-food": {
@@ -1236,7 +1210,7 @@
                 "metal-furniture"
             ],
             "then": {
-                "output": "metal-furniture-solid-food"
+                "output": "leather-wood-metal-glass-plastic-furniture-solid-food"
             }
         },
         "glass-furniture-solid-food": {
@@ -1245,7 +1219,7 @@
                 "glass-furniture"
             ],
             "then": {
-                "output": "glass-furniture-solid-food"
+                "output": "leather-wood-metal-glass-plastic-furniture-solid-food"
             }
         },
         "plastic-furniture-solid-food": {
@@ -1254,7 +1228,7 @@
                 "plastic-furniture"
             ],
             "then": {
-                "output": "plastic-furniture-solid-food"
+                "output": "leather-wood-metal-glass-plastic-furniture-solid-food"
             }
         },
 
@@ -1319,7 +1293,7 @@
                 "wall-tiles"
             ],
             "then": {
-                "output": "wall-tiles-mixed-food"
+                "output": "tiles-paint-brick-wall-food"
             }
         },
         "paint-wall-mixed-food": {
@@ -1328,7 +1302,7 @@
                 "paint-wall"
             ],
             "then": {
-                "output": "paint-wall-mixed-food"
+                "output": "tiles-wood-brick-wall-food"
             }
         },
         "wooden-wall-mixed-food": {
@@ -1346,7 +1320,7 @@
                 "brick-wall"
             ],
             "then": {
-                "output": "brick-wall-mixed-food"
+                "output": "tiles-paint-brick-wall-food"
             }
         },
 
@@ -1383,7 +1357,7 @@
                 "metal-furniture"
             ],
             "then": {
-                "output": "metal-furniture-mixed-food"
+                "output": "metal-glass-plastic-furniture-mixed-food"
             }
         },
         "glass-furniture-mixed-food": {
@@ -1392,7 +1366,7 @@
                 "glass-furniture"
             ],
             "then": {
-                "output": "glass-furniture-mixed-food"
+                "output": "metal-glass-plastic-furniture-mixed-food"
             }
         },
         "plastic-furniture-mixed-food": {
@@ -1401,7 +1375,7 @@
                 "plastic-furniture"
             ],
             "then": {
-                "output": "plastic-furniture-mixed-food"
+                "output": "metal-glass-plastic-furniture-mixed-food"
             }
         },
 
@@ -1435,11 +1409,16 @@
     },
 
     "outputs": {
+        "tip-whole-house": "Always clean rooms and surfaces from top to bottom. This way, you won't have to clean the same surface twice.",
+        "tip-cleaning-with-products": "Use the right cleaning products for the right surfaces. This way, you won't damage the surfaces you are cleaning.",
+        "tip-cleaning-products-instructions": "Always read the instructions on the cleaning products. This way, you will know how to use them correctly.",
+        "tip-cleaning-supplies": "It is wise to always have the following cleaning supplies at hand: a vacuum cleaner, a mop, a broom, a glass cleaner, an all-purpose cleaner, a degreaser, a toilet brush, a toilet cleaner, a feather duster, paper towels, scouring sponges, and cloths for cleaning in general.",
+
         "general-quick-living-room": "For the living-room, first declutter and clean up all non-essential objects in the livingroom. Then dust the general surfaces. Vacuum and the the floors.",
         "general-thorough-living-room": "For the living-room, first declutter and clean up all non-essential objects in the livingroom. Then dust the general surfaces. Use a vacuum cleaner with a special brush to clean between the gaps and the surface of the sofa. You can use a feather duster to clean the lamps from dust. Use a soft, dry cloth to dust the TV. With a damp cloth dust the TV cabinet, table, sidetables.  Vacuum and then mop the floors.",
 
         "general-quick-kitchen": "For the kitchen, declutter and clean up all non-essential objects in the room. From the fridge and the freezer, remove all things past their due date. Clean the kitchen cabinets and the counter with a cloth using all-purpose cleaner, finish by wiping with a dry cloth. Clean the sink using the scour side of a scouring-sponge and abrasive. For the tap, use an anti-limescale cleaning agent, use the scour side of a scouring-sponge. Rinse off the anti-limescale cleaning agent and dry using a dry cloth. For the stove, use an all-purpose cleaner and the scour side of a scouring sponge. For persistent stains use degreaser. Finish wiping off with a dry cloth. Vacuum the kitchen to finish.",
-        "general-thorough-kitchen": "For the kitchen, declutter and clean up all non-essential objects in the room. Start with the freezer. For the freezer, remove the plug and put a kitchen towel in front, on the floor, open the door of the freezer and remove all items. You can put this in a COOLBAG??? Put a few pans with hot water inside. Close the door. Wait a while. Clean the kitchen cabinets, especially the handles, and the counter with a cloth using all-purpose cleaner, finish by wiping with a dry cloth. Clean the sink using the scour side of a scouring-sponge and abrasive. For the tap, use an anti-limescale cleaning agent, use the scour side of a scouring-sponge. Rinse off the an anti-limescale cleaning agent and dry using a dry cloth. For the stove, use an all-purpose cleaner and the scour side of a scouring pad. For persistent stains use degreaser. Finish wiping off with a dry cloth. For the hood, remove the detachable elements. If possible, you can put them in the dishwasher. If this does not fit, clean them using a degreaser and the dishwashing brush. Rinse off and let dry. For the oven, use a degreaser and the soft side of a scouring sponge. For the outside of the oven door, you can use a glass cleaner. For the inside of the oven door, you can still use degreaser. For the dishwasher, clean out the detachable filters. For the refrigerator, remove all elements past their due date. Remove all detachable elements and wash them off using dishssoap. The inside of the refrigerator can be cleaned using a cloth and allpurpose cleaner. Afterwards make it dry with a dry cloth. For the detachable elements, you can dry them off and put them back. Now, back to the freezer. Open the door. Remove the pans and look whether the ice has melted. Put a catcher in the freezer that can catch ice. Then use a SCRAPER? to remove excess ice. Dry the freezer using a dry cloth. Clean the rubber parts of the door using dishssoap. Put the plug back into its socket! Return all items into the freezer. Close the door. Remove the kitchentowel from the floor. For the coffeemachine, ONTKALK once every three months using a ONTKALKER for your coffeemachine, this can be machine dependent. Some machines don't need to be ONTKALKT. For the kettle, use ONTKALKER for the kettle. Once evry three months. To finish, vacuum and mop the kitchen.",
+        "general-thorough-kitchen": "For the kitchen, declutter and clean up all non-essential objects in the room. Start with the freezer. For the freezer, remove the plug and put a kitchen towel in front, on the floor, open the door of the freezer and remove all items. You can put this in a COOLBAG??? Put a few pans with hot water inside. Close the door. Wait a while. Clean the kitchen cabinets, especially the handles, and the counter with a cloth using all-purpose cleaner, finish by wiping with a dry cloth. Clean the sink using the scour side of a scouring-sponge and abrasive. For the tap, use an anti-limescale cleaning agent, use the scour side of a scouring-sponge. Rinse off the an anti-limescale cleaning agent and dry using a dry cloth. For the stove, use an all-purpose cleaner and the scour side of a scouring pad. For persistent stains use degreaser. Finish wiping off with a dry cloth. For the hood, remove the detachable elements. If possible, you can put them in the dishwasher. If this does not fit, clean them using a degreaser and the dishwashing brush. Rinse off and let dry. For the oven, use a degreaser and the soft side of a scouring sponge. For the outside of the oven door, you can use a glass cleaner. For the inside of the oven door, you can still use degreaser. For the dishwasher, clean out the detachable filters. For the refrigerator, remove all elements past their due date. Remove all detachable elements and wash them off using dishssoap. The inside of the refrigerator can be cleaned using a cloth and allpurpose cleaner. Afterwards make it dry with a dry cloth. For the detachable elements, you can dry them off and put them back. Now, back to the freezer. Open the door. Remove the pans and look whether the ice has melted. Put a catcher in the freezer that can catch ice. Then use a SCRAPER? to remove excess ice. Dry the freezer using a dry cloth. Clean the rubber parts of the door using dishssoap. Put the plug back into its socket! Return all items into the freezer. Close the door. Remove the kitchentowel from the floor. For the coffeemachine, descale once every three months using a descaler for your coffeemachine, this can be machine dependent. Some machines don't need to be descaled. For instance, some houses have filters to prevent calcium from building up. For the kettle, use descaler once every three months if you do not have this filter. To finish, vacuum and mop the kitchen.",
 
         "general-quick-bedroom": "For the bedroom, first declutter and clean up all non-essential objects in the room. Change the sheets of the bed. Dust the cabinets and lamps with a damp cloth and allpurpose cleaner. Vacuum, also under the bed.",
         "general-thorough-bedroom": "For the bedroom, first declutter and clean up all non-essential objects in the room. Change the sheets of the bed. Dust the cabinets and lamps with a damp cloth and allpurpose cleaner. Vacuum, also under the bed. Mop the bedroom to finish.",
@@ -1456,75 +1435,58 @@
         "marble-floor-no-stain": "Vacuum the floor and then mop the floor using allpurpose cleaner.",
         "laminate-flooring-no-stain": "Vacuum the floor using a soft brush, then mop using a damp mop, not too wet. There is special laminate cleaner to use. If you don't have this, you can use a laminate-cleaner for mopping.",
 
-        "wallpaper-no-stain": "This is not generally necessary.",
         "wall-tiles-no-stain": "Use a damp cloth with allpurpose cleaner.",
-        "paint-wall-no-stain": "This is not generally necessary.",
-        "wooden-wall-no-stain": "This is not generally necessary.",
-        "brick-wall-no-stain": "This is not generally necessary.",
+        "wallpaper-paint-wood-brick-wall-no-stain": "This is not generally necessary.",
 
         "fabric-furniture-no-stain": "Use a vacuum cleaner for the couch. There are special brushes for this. If you do not have this, consider not using a nozzle.",
         "leather-furniture-no-stain": "Use a damp cloth and make sure to clean the surface frequently. There is also special leather grease to use which can be used once so often.",
         "wood-furniture-no-stain": "It is possible to use a special wood oil to treat the wood. Otherwise, use a damp cloth.",
-        "metal-furniture-no-stain": "Use a damp cloth with a glass cleaner and then a dry cloth.",
-        "glass-furniture-no-stain": "Use a damp cloth with a glass cleaner and then a dry cloth.",
+        "metal-glass-furniture-no-stain": "Use a damp cloth with a glass cleaner and then a dry cloth.",
         "plastic-furniture-no-stain": "Use a damp cloth with all purpose cleaner and then a dry cloth.",
 
-        "carpet-oil": "First dap the stain with a kitchen cloth. Then use a wet cloth with degreaser or dish soap. Rub with a brush until the stain is removed. Then use a dry cloth to dry the carpet. If the stain is not removed, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
-        "floor-tiles-oil": "First use a kitchen cloth to let it soak up the oil. Then use a wet cloth with degreaser, dish soap or hot water with degreaser. Then use a dry cloth to dry the floor.",
-        "wood-floor-oil": "If the floor is untreated, consider using a saw to remove the stain. Otherwise, if the stain remained on top use a kitchen cloth to remove the oil. Then use a wet cloth with degreaser, dish soap or hot water with degreaser. Then use a dry cloth to dry the floor.",
+        "carpet-oil": "First dab the stain with a paper towel. Then use a wet cloth with degreaser or dish soap. Rub with a brush until the stain is removed. Then use a dry cloth to dry the carpet. If the stain is not removed, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
+        "floor-tiles-oil": "First use a paper towel to let it soak up the oil. Then use a wet cloth with degreaser, dish soap or hot water with degreaser. Then use a dry cloth to dry the floor.",
+        "wood-floor-oil": "If the floor is untreated, consider using a saw to remove the stain. Otherwise, if the stain remained on top use a paper towel to remove the oil. Then use a wet cloth with degreaser, dish soap or hot water with degreaser. Then use a dry cloth to dry the floor.",
         "marble-floor-oil": "Use a mop with hot water and degreaser. Then use a dry cloth to dry the floor.",
         "laminate-flooring-oil": "Use a damp mop with lukewarm water. Then use a dry cloth to dry the floor.",
 
         "wallpaper-oil": "Consider wallpapering the wall again.",
-        "wall-tiles-oil": "Use a kitchen cloth to rub the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
-        "paint-wall-oil": "Use a kitchen cloth to dab the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
-        "wooden-wall-oil": "Use a kitchen cloth to rub remove the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
-        "brick-wall-oil": "Use a kitchen cloth to dab the stain.",
+        "tiles-paint-wall-oil": "Use a paper towel to dab the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
+        "wooden-wall-oil": "Use a paper towel to rub remove the stain. If it is not removed, you may use a damp cloth with degreaser or dish soap to remove it. Dry the wall with a dry cloth.",
+        "brick-wall-oil": "Use a paper towel to dab the stain.",
 
-        "fabric-furniture-oil": "You can use a kitchen cloth remove the excess oil. Try using dishs soap on a wet cloth to try and remove the stain. Dry the furniture with a dry cloth.",
-        "leather-furniture-oil": "Use a kitchen cloth to rub the stain. If it is not removed, try using a little bit of dish soap. Dry the furniture with a dry cloth.",
+        "fabric-furniture-oil": "You can use a paper towel remove the excess oil. Try using dishs soap on a wet cloth to try and remove the stain. Dry the furniture with a dry cloth.",
+        "leather-furniture-oil": "Use a paper towel to rub the stain. If it is not removed, try using a little bit of dish soap. Dry the furniture with a dry cloth.",
         "wood-furniture-oil": "Try to rub the stain into the furniture, it is possible that it will not be seen anymore.",
-        "metal-furniture-oil": "Use a kitchen cloth to rub the stain. Dry the furniture with a dry cloth.",
+        "metal-furniture-oil": "Use a paper towel to rub the stain. Dry the furniture with a dry cloth.",
         "glass-furniture-oil": "First use degreaser to remove it. Then use glass cleaner to remove the degreaser. Let it air dry.",
-        "plastic-furniture-oil": "Use a kitchen cloth to dab the stain. Then you can use dish soap to remove excess oil. Dry the furniture with a dry cloth.",
+        "plastic-furniture-oil": "Use a paper towel to dab the stain. Then you can use dish soap to remove excess oil. Dry the furniture with a dry cloth.",
 
         "carpet-blood": "Dab the stain with cloth and cold water. You can use a brush if necessary. If possible, let it soak in cold water for a while. Then use a dry cloth to dry the carpet. If the stain is not removed, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
         "floor-tiles-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
         "wood-floor-blood": "Remove it as quickly as possible using a cold wet cloth. Then use a dry cloth to dry the floor.",
-        "marble-floor-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
-        "laminate-flooring-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
+        "marble-laminate-floor-blood": "Use a cloth to soak up the blood. Then you may use a warm cloth to clean it up. Then use a dry cloth to dry the floor.",
 
-        "wallpaper-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "wall-tiles-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "paint-wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "wooden-wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
-        "brick-wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
+        "wall-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
 
         "fabric-furniture-blood": "Dab the stain with a cloth soaked in cold water and then wipe with a dry cloth",
         "leather-furniture-blood": "Use a wet cloth and make sure to clean the surface frequently",
         "wood-furniture-blood": "Use a wet cloth and then dry the furniture immediately",
-        "metal-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
+        "metal-plastic-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
         "glass-furniture-blood": "Use a wet cloth with cleaning vinegar and then a dry cloth",
-        "plastic-furniture-blood": "Use a wet cloth with an all purpose cleaner and then a dry cloth",
 
         "carpet-dust": "Vacuum the carpet. If your vacuum has a special brush for the carpet, it is wise to use that. Otherwise you can take the nozzle off.",
-        "floor-tiles-dust": "Vacuum the floor.",
-        "wood-floor-dust": "Vacuum the floor.",
-        "marble-floor-dust": "Vacuum the floor.",
+        "tiles-wood-marble-floor-dust": "Vacuum the floor.",
         "laminate-flooring-dust": "Vacuum the floor, use a soft brush.",
 
-        "wallpaper-dust": "You can use a duster to remove the dust.",
+        "wallpaper-paint-wood-wall-dust": "You can use a duster to remove the dust.",
         "wall-tiles-dust": "You can use a wet cloth to remove the dust. You may use allpurpose cleaner.",
-        "paint-wall-dust": "You can use a duster to remove the dust.",
-        "wooden-wall-dust": "You can use a duster to remove the dust.",
         "brick-wall-dust": "You can try to use a broom to remove the dust from the brick wall.",
 
         "fabric-furniture-dust": "Use a vacuum with a small nozzle.",
-        "leather-furniture-dust": "Use a damp cloth to remove the dust.",
         "wood-furniture-dust": "Use a vacuum cleaner to remove the dust.",
-        "metal-furniture-dust": "Use a damp cloth to remove the dust. You can also use glass cleaner as it will leave no streaks.",
-        "glass-furniture-dust": "Use a damp cloth to remove the dust. You can also use glass cleaner as it will leave no streaks.",
-        "plastic-furniture-dust": "Use a damp cloth to remove the dust.",
+        "leather-plastic-furniture-dust": "Use a damp cloth to remove the dust.",
+        "metal-glass-furniture-dust": "Use a damp cloth to remove the dust. You can also use glass cleaner as it will leave no streaks.",
 
         "carpet-ink": "There might be ink remover available for your carpet. Otherwise, if the stain is not removeable, use some scissors to cut the stain out or consider buying a new carpet. If none of these are options for you, you can consider putting furniture on top of the stain.",
         "floor-tiles-ink": "Use a warm weth cloth to remove the stain.",
@@ -1532,7 +1494,7 @@
         "marble-floor-ink": "Use a wet cloth with an all purpose cleaner and then a dry cloth.",
         "laminate-flooring-ink": "Use a wet cloth with an all purpose cleaner. Finish using laminate-cleaner then a dry cloth.",
 
-        "wallpaper-ink": "Sadly this is not really possible.",
+        "wallpaper-ink": "You can try using an ink remover for wallpaper. It is wise to first try it on a spot that will not be visisble if it does not work or leave an additional stain that our system does not account for.",
         "wall-tiles-ink": "Use the scour side of a wet scouring pad to remove the stain.",
         "paint-wall-ink": "You can try to remove the stain by using degreaser and the soft side of a scouring pad. Rub softly.",
         "wooden-wall-ink": "You can try to scrub the stain off the wood.",
@@ -1541,70 +1503,57 @@
         "fabric-furniture-ink": "You can try using a special ink remover for fabric. It is wise to first try it on a spot that will not be visisble if it does not work or leave an additional stain that our system does not account for.",
         "leather-furniture-ink": "You can try using turpentine to remove the stain. It is wise to first try it on a spot that will not be visisble if it does not work or leave an additional stain that our system does not account for.",
         "wood-furniture-ink": "You can try to scrub the stain off the wood.",
-        "metal-furniture-ink": "You can use a kitchen cloth to remove the stain. If it is still visible you can use a wet cloth with all purpose cleaner and then a dry cloth.",
+        "metal-furniture-ink": "You can use a paper towel to remove the stain. If it is still visible you can use a wet cloth with all purpose cleaner and then a dry cloth.",
         "glass-furniture-ink": "Use a wet cloth to remove the stain. Then use glass cleaner to remove the streaks. Let it air dry.",
         "plastic-furniture-ink": "For this, you can try using a rubber sponge and degreaser to remove the stain.",
 
         "carpet-liquid-food": "First try to get most of the food off using a spoon. Then, use a wet cloth to dab the stain. Then use a dry cloth to dry the carpet.",
-        "floor-tiles-liquid-food": "Use a kitchen cloth to remove it. If it is sticky, then use a warm wet cloth to remove it. Finish by using a dry towel to dry the tiles.",
+        "floor-tiles-liquid-food": "Use a paper towel to remove it. If it is sticky, then use a warm wet cloth to remove it. Finish by using a dry towel to dry the tiles.",
         "wood-floor-liquid-food": "Remove it as quickly as possible with a wet cloth. Then use a dry cloth to dry the floor.",
         "marble-floor-liquid-food": "Mop the floor and let it dry.",
         "laminate-flooring-liquid-food": "Mop the floor with laminate-cleaner and let it dry.",
 
         "wallpaper-liquid-food": "You can try using a damp cloth and dab softly. Afterwards you can try to rub carefully.",
-        "wall-tiles-liquid-food": "Use a wet cloth with an all purpose cleaner and then a dry cloth.",
-        "paint-wall-liquid-food": "Use a damp cloth with an all purpose cleaner and then a dry cloth.",
+        "wall-tiles-paint-wall-liquid-food": "Use a damp cloth with an all purpose cleaner and then a dry cloth.",
         "wooden-wall-liquid-food": "Remove it as quickly as possible with a wet cloth. Then use a dry cloth to dry the surface.",
         "brick-wall-liquid-food": "Use a damp cloth to dab the stain.",
 
         "fabric-furniture-liquid-food": "Dab the stain carefully, do not rub it in. Use a dry cloth to dry it, do not push it in but rub it dry on the surface.",
         "leather-furniture-liquid-food": "First remove as much of the liquid as possible. Then use a use a dry cloth to dab the stain. Afterwards, use a damp cloth to rub the stain. Finally, use a dry cloth to dry the surface.",
         "wood-furniture-liquid-food": "Remove it as quickly as possible with a wet cloth. Then use a dry cloth to dry the surface.",
-        "metal-furniture-liquid-food": "Remove the stain using a damp cloth. Finish with glass cleaner and let it air dry.",
-        "glass-furniture-liquid-food": "Remove the stain using a damp cloth. Finish with glass cleaner and let it air dry.",
-        "plastic-furniture-liquid-food": "Remove the stain using a damp cloth. Finish with glass cleaner and let it air dry.",
+        "metal-glass-plastic-furniture-liquid-food": "Remove the stain using a damp cloth. Finish with glass cleaner and let it air dry.",
 
         "carpet-solid-food": "Vacuum the carpet. If your vacuum has a special brush for the carpet, it is wise to use that. Otherwise you can take the nozzle off. You may aso use a crumble thief.",
-        "floor-tiles-solid-food": "Use a broom and dustpan to remove the food.",
-        "wood-floor-solid-food": "Use a broom and dustpan to remove the food.",
+        "floor-tiles-wood-floor-solid-food": "Use a broom and dustpan to remove the food.",
         "marble-floor-solid-food": "Use a broom and dustpan to remove the food. A vacuum is also possible. A crumble thief is also fine.",
         "laminate-flooring-solid-food": "Vacuum the floor to remove the food.",
 
         "wallpaper-solid-food": "You can use a feather duster to remove it.",
         "wall-tiles-solid-food": "Use a warm damp cloth to remove the food. You can also use degreaser or dish soap, whichever is available.",
-        "paint-wall-solid-food": "Use a warm damp cloth to remove the food.",
-        "wooden-wall-solid-food": "Use a warm damp cloth to remove the food.",
+        "paint-wooden-wall-solid-food": "Use a warm damp cloth to remove the food.",
         "brick-wall-solid-food": "You can use a vacuum cleaner or a small broom to remove the food.",
 
         "fabric-furniture-solid-food": "You can use a vacuum cleaner to remove the food.",
-        "leather-furniture-solid-food": "Use a cloth to remove the food from the furniture.",
-        "wood-furniture-solid-food": "Use a cloth to remove the food from the furniture.",
-        "metal-furniture-solid-food": "Use a cloth to remove the food from the furniture.",
-        "glass-furniture-solid-food": "Use a cloth to remove the food from the furniture.",
-        "plastic-furniture-solid-food": "Use a cloth to remove the food from the furniture.",
+        "leather-wood-metal-glass-plastic-furniture-solid-food": "Use a cloth to remove the food from the furniture.",
 
         "carpet-mixed-food": "First use a spoon to get most of the food off the carpet. Then dab the stain with a damp cloth. Then use a dry cloth to dry the carpet.",
-        "floor-tiles-mixed-food": "Use some kitchen cloths to remove as much as possible. You can finish by using a wet cloth to remove the rest. Then use a dry cloth to dry the floor.",
-        "wood-floor-mixed-food": "Use some kitchen cloths to remove most of the food until only liquid food is left. Then you can use a wet cloth to remove the rest. Then use a dry cloth to dry the floor.",
-        "marble-floor-mixed-food": "Use some kitchen cloths to remove most of the food until only liquid food is left. Then you can use a damp cloth with allpurpose cleaner to remove the rest. Then use a dry cloth to dry the floor.",
-        "laminate-flooring-mixed-food": "Use some kitchen cloths to remove most of the food until only liquid food is left. Then you can use a damp cloth with laminate-cleaner to remove the rest. Then use a dry cloth to dry the floor.",
+        "floor-tiles-mixed-food": "Use some paper towels to remove as much as possible. You can finish by using a wet cloth to remove the rest. Then use a dry cloth to dry the floor.",
+        "wood-floor-mixed-food": "Use some paper towels to remove most of the food until only liquid food is left. Then you can use a wet cloth to remove the rest. Then use a dry cloth to dry the floor.",
+        "marble-floor-mixed-food": "Use some paper towels to remove most of the food until only liquid food is left. Then you can use a damp cloth with allpurpose cleaner to remove the rest. Then use a dry cloth to dry the floor.",
+        "laminate-flooring-mixed-food": "Use some paper towels to remove most of the food until only liquid food is left. Then you can use a damp cloth with laminate-cleaner to remove the rest. Then use a dry cloth to dry the floor.",
 
         "wallpaper-mixed-food": "You can first use a spoon to remove most of the food. Then try using a warm damp cloth to dab the stain.",
-        "wall-tiles-mixed-food": "Use some kitchen cloths to remove most of the food until only liquid food is left. Then you can use a damp cloth with allpurpose cleaner to remove the rest. Then use a dry cloth to dry the wall.",
-        "paint-wall-mixed-food": "Use some kitchen cloths to remove most of the food until only liquid food is left. Then you can use a damp cloth with allpurpose cleaner to remove the rest. Then use a dry cloth to dry the wall.",
-        "wooden-wall-mixed-food": "Quickly remove the food using kitchen cloths. Then use a warm damp cloth to remove the rest. Then use a dry cloth to dry the wall.",
-        "brick-wall-mixed-food": "Use some kitchen cloths to remove most of the food until only liquid food is left. Then you can use a damp cloth with allpurpose cleaner to remove the rest. Then use a dry cloth to dry the wall.",
+        "wooden-wall-mixed-food": "Quickly remove the food using paper towels. Then use a warm damp cloth to remove the rest. Then use a dry cloth to dry the wall.",
+        "tiles-paint-brick-wall-food": "Use some paper towels to remove most of the food until only liquid food is left. Then you can use a damp cloth with allpurpose cleaner to remove the rest. Then use a dry cloth to dry the wall.",
 
         "fabric-furniture-mixed-food": "First use a spoon to get most of the food off the furniture. Then, dab the stain carefully, do not rub it in. Use a dry cloth to dry it, do not push it in but rub it dry on the surface.",
         "leather-furniture-mixed-food": "Use a damp cloth to remove the food from the furniture. Then use a dry cloth to dry the furniture.",
         "wood-furniture-mixed-food": "Use a damp cloth to remove the food from the furniture. Then use a dry cloth to dry the furniture.",
-        "metal-furniture-mixed-food": "Use a damp cloth to remove the food from the furniture. Finish by using glass cleaner and let it air dry.",
-        "glass-furniture-mixed-food": "Use a damp cloth to remove the food from the furniture. Finish by using glass cleaner and let it air dry.",
-        "plastic-furniture-mixed-food": "Use a damp cloth to remove the food from the furniture. Finish by using glass cleaner and let it air dry.",
+        "metal-glass-plastic-furniture-mixed-food": "Use a damp cloth to remove the food from the furniture. Finish by using glass cleaner and let it air dry.",
 
         "water": "Use a dry cloth to wipe the surface. Then, let it dry. Do not try to use a hair dryer or fan to dry the surface. This might result in a burn stain and unfortunately, our program does not account for burn stains.",
         "animal-hair": "Onle for fabric, use rubber gloves to remove the hair. Otherwise using a vacuum cleaner can do the job.",
-        "glass": "Remove the large pieces carefully from the surface. If there is an additional substance present, first try using kitchen cloths to gather most of the subtance and remove it. It is also possible to use a broom and dustpan to remove glass, including an additional substance. Then, use a vacuum cleaner to remove the small pieces. You can check whether you have removed all the pieces by using a flashlight, if there are reflecting pieces, glass splinters may still be present. Finally, if a stain is present, you can reset and start again with the new substance."
+        "glass": "Remove the large pieces carefully from the surface. If there is an additional substance present, first try using paper towels to gather most of the subtance and remove it. It is also possible to use a broom and dustpan to remove glass, including an additional substance. Then, use a vacuum cleaner to remove the small pieces. You can check whether you have removed all the pieces by using a flashlight, if there are reflecting pieces, glass splinters may still be present. Finally, if a stain is present, you can reset and start again with the new substance."
     },
 
     "questions": {
@@ -1617,12 +1566,16 @@
                     "fact": ["general-cleaning", "quick-or-thorough"]
                 },
                 "answer2": {
-                    "text": "Cleaning specific furniture, walls, or floors",
+                    "text": "Cleaning specific furniture, wall, or floors",
                     "fact": ["no-stain", "room-surface"]
                 },
                 "answer3": {
                     "text": "Cleaning a specific stain or substance",
                     "fact": ["stain", "room-surface"]
+                },
+                "answer4": {
+                    "text": "I want some tips and tricks",
+                    "fact": ["tips"]
                 }
             }
         },
@@ -1698,7 +1651,7 @@
                 },
                 "answer2": {
                     "text": "The walls",
-                    "fact": "walls"
+                    "fact": "wall"
                 },
                 "answer3": {
                     "text": "The floor",
@@ -1740,7 +1693,7 @@
         },
         "wall-cleaning": {
             "if": [
-                "walls"
+                "wall"
             ],
             "text": "What is the type of surface on the walls?",
             "answers": {
