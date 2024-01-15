@@ -1799,7 +1799,7 @@
                 },
                 "answer2": {
                     "text": "solid food or crumbs",
-                    "fact": "food-crumbs"
+                    "fact": "solid-food"
                 },
                 "answer3": {
                     "text": "liquid and solid food",
