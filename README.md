@@ -10,4 +10,4 @@ Project for the year 2023 - 2024
 
 ## Limitations
 
-We are unable to account for every possible stain so we only focused on the most common ones. Additionally, there are a few outputs that we have left to verify with the expert.
+We are unable to account for every possible stain so we only focused on the most common ones.
