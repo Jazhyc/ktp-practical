@@ -1,24 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container py-5">
-        <h1 class="mb-4"> {{ question }} </h1>
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="form-container">
+        <h1 class="mb-4">{{ question }}</h1>
         <form method="POST">
             {{ form.hidden_tag() }}
-            <div class="form-group">
-                {{ form.answer.label(class="d-block mb-2") }}
+            <div class="grid-container">
                 {% for subfield in form.answer %}
-                    <div class="custom-control custom-radio mb-2">
-                        {{ subfield(class="custom-control-input") }} 
-                        {{ subfield.label(class="custom-control-label") }}
+                    <div class="grid-item">
+                        {% set data = subfield.data[0] if subfield.data | is_list and subfield.data|length > 0 else subfield.data %}
+                        <label style="cursor: pointer;">
+                            {% set found = false %}
+                            {% for ext in ['.jpg', '.png', '.jpeg'] if not found %}
+                                {% set filename = data + ext %}
+                                {% if filename in filenames %}
+                                    <img src="{{ url_for('static', filename=filename) }}">
+                                    {% set found = true %}
+                                {% endif %}
+                            {% endfor %}
+                            <div class="custom-control custom-radio mb-2">
+                                {{ subfield(class="custom-control-input") }} 
+                                <span class="custom-control-label">
+                                    {{ subfield.label }}
+                                </span>
+                            </div>
+                        </label>
                     </div>
                 {% endfor %}
             </div>
-            {{ form.submit(class="btn btn-primary") }}
+            {{ form.submit(class="btn btn-primary btn-block") }}
         </form>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

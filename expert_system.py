@@ -30,10 +30,27 @@ class ExpertSystem:
     def add_fact(self, fact):
         """Adds a fact to the known facts"""
         print(f"Added fact: {fact}")
-        self.known_facts.append(fact)
+
+        # if fact is enclosed in square brackets, consider it a list of facts and add them all
+        if fact.startswith('[') and fact.endswith(']'):
+            for f in fact[1:-1].split(','):
+
+                # remove ' and " from the fact
+                f = f.replace("'", '').replace('"', '')
+                self.known_facts.append(f.strip())
+
+        else:
+            self.known_facts.append(fact)
 
     def get_output_detail(self):
         """Returns the output detail"""
+
+        print(self.output)
+
+        # If the json contains a list of outputs, return the list of details
+        if isinstance(self.output, list):
+            return [self.kb['outputs'][fact] for fact in self.output]
+
         return self.kb['outputs'][self.output]
 
     def reset(self):
